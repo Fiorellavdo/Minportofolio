@@ -142,6 +142,29 @@ function openLbx(src) {
 }
 function closeLbx() { document.getElementById('lbx').classList.remove('open'); }
 
+function showSection(sectionId, btnEl) {
+  // Hide all sections
+  document.querySelectorAll('[data-section]').forEach(sec => {
+    sec.classList.remove('active');
+  });
+  
+  // Remove active class from all buttons
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  // Show selected section
+  const section = document.querySelector(`[data-section="${sectionId}"]`);
+  if (section) {
+    section.classList.add('active');
+  }
+  
+  // Activate button
+  if (btnEl) {
+    btnEl.classList.add('active');
+  }
+}
+
 function readFile(file) {
   return new Promise(res => {
     const r = new FileReader(); r.onload = e => res(e.target.result); r.readAsDataURL(file);
@@ -276,4 +299,12 @@ async function addVideo(id, inp) {
   inp.value = '';
 }
 
-document.addEventListener('DOMContentLoaded', renderStaticContent);
+document.addEventListener('DOMContentLoaded', () => {
+  renderStaticContent();
+  
+  // Initialize first section as active
+  const firstSection = document.querySelector('[data-section="vai"]');
+  if (firstSection) {
+    firstSection.classList.add('active');
+  }
+});

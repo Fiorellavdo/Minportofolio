@@ -94,8 +94,17 @@
     <p>Urval av kampanjer, grafik och innehåll jag producerat. Klicka på en bild för att förstora.</p>
   </div>
 
+  <!-- SECTION TABS -->
+  <div class="section-tabs">
+    <button class="tab-btn active" onclick="showSection('vai', this)">VAI Marketing</button>
+    <button class="tab-btn" onclick="showSection('evity', this)">Evity</button>
+    <button class="tab-btn" onclick="showSection('silva', this)">Primus-Silva</button>
+    <button class="tab-btn" onclick="showSection('ihm', this)">IHM</button>
+    <button class="tab-btn" onclick="showSection('eget', this)">Eget</button>
+  </div>
+
   <!-- VAI -->
-  <div class="gal-sec">
+  <div class="gal-sec" data-section="vai">
     <div class="gal-header"><span class="gal-tag">2025 – nu</span><h2 class="gal-title">VAI Marketing</h2></div>
     <p class="gal-sub">Organisk social media, SEO, webbproduktion och kampanjkoordinering</p>
     <div class="upload-toolbar">
@@ -112,7 +121,7 @@
   </div>
 
   <!-- EVITY -->
-  <div class="gal-sec">
+  <div class="gal-sec" data-section="evity">
     <div class="gal-header"><span class="gal-tag">LIA 2025</span><h2 class="gal-title">Evity</h2></div>
     <p class="gal-sub">SEO-analyser, sökoptimerat innehåll och varumärkesutveckling</p>
     <div class="upload-toolbar">
@@ -187,7 +196,7 @@
   </div>
 
   <!-- SILVA / PRIMUS -->
-  <div class="gal-sec">
+  <div class="gal-sec" data-section="silva">
     <div class="gal-header"><span class="gal-tag">LIA 2024</span><h2 class="gal-title">Primus-Silva Sweden AB</h2></div>
     <p class="gal-sub">Copywriting, textanpassning för Meta & sociala medier, e-postflöden i Klaviyo</p>
     <div class="credit-note">&#9432;&nbsp; Foton tagna av Primus-Silvas fotografer. Jag ansvarade för att skapa textsättning, anpassning för Meta och tillsammans med några andra ta fram en förslag för e-postflödenas struktur och innehåll.</div>
@@ -211,7 +220,7 @@
   </div>
 
   <!-- IHM -->
-  <div class="gal-sec">
+  <div class="gal-sec" data-section="ihm">
     <div class="gal-header"><span class="gal-tag">2023–2025</span><h2 class="gal-title">IHM Business School</h2></div>
     <p class="gal-sub">Skolprojekt, kampanjuppgifter och examinationsarbeten</p>
     <div class="upload-toolbar">
@@ -229,7 +238,7 @@
 
 
   <!-- EGET / HOBBY & FRILANS -->
-  <div class="gal-sec">
+  <div class="gal-sec" data-section="eget">
     <div class="gal-header"><span class="gal-tag">Eget</span><h2 class="gal-title">Hobby & frilansprojekt</h2></div>
     <p class="gal-sub">Innehåll och projekt skapade på egen hand — utanför jobb och skola</p>
     <div class="upload-toolbar">
