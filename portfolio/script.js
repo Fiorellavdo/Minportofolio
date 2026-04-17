@@ -178,15 +178,64 @@ function renderStaticContent() {
     const grid = document.getElementById('grid-' + id);
     if (!grid) return;
 
-    // Images
-    (BILDER[id] || []).forEach(({ src, alt }) => {
-      const item = document.createElement('div');
-      item.className = 'gal-item';
-      item.innerHTML = `<img src="${src}" alt="${alt}" onclick="openLbx('${src}')">`;
-      grid.appendChild(item);
-    });
+    // For Evity, keep stats at top
+    if (id === 'evity') {
+      const statsRow = grid.querySelector('.evity-stats-row');
+      if (statsRow) {
+        // Keep stats, will add carousel after
+      }
+    }
 
-    // Carousels
+    const images = BILDER[id] || [];
+    if (images.length > 0) {
+      // Create carousel container
+      let currentIndex = 0;
+      const container = document.createElement('div');
+      container.className = 'carousel-container';
+      
+      const img = document.createElement('img');
+      img.src = images[0].src;
+      img.alt = images[0].alt;
+      img.style.cursor = 'zoom-in';
+      img.onclick = () => openLbx(images[currentIndex].src);
+      container.appendChild(img);
+      grid.appendChild(container);
+
+      // Create navigation controls
+      const nav = document.createElement('div');
+      nav.className = 'carousel-nav';
+      
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'carousel-arrow';
+      prevBtn.textContent = '←';
+      prevBtn.onclick = () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        img.src = images[currentIndex].src;
+        img.alt = images[currentIndex].alt;
+        counter.textContent = `${currentIndex + 1} / ${images.length}`;
+      };
+      
+      const counter = document.createElement('span');
+      counter.className = 'carousel-counter';
+      counter.textContent = `1 / ${images.length}`;
+      
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'carousel-arrow';
+      nextBtn.textContent = '→';
+      nextBtn.onclick = () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        img.src = images[currentIndex].src;
+        img.alt = images[currentIndex].alt;
+        counter.textContent = `${currentIndex + 1} / ${images.length}`;
+      };
+      
+      nav.appendChild(prevBtn);
+      nav.appendChild(counter);
+      nav.appendChild(nextBtn);
+      grid.appendChild(nav);
+    }
+
+    // Carousels (existing code)
     (KARUSELLER[id] || []).forEach(slides => {
       if (!slides.length) return;
       let idx = 0;
