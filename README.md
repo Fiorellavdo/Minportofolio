@@ -1,0 +1,2 @@
+# Minportofolio
+Min portofolio
