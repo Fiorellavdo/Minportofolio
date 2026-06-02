@@ -3,7 +3,7 @@
    ---------------------------------------------------------------------
    Varje verktyg: { name, icon }
      icon = Simple Icons-slug (https://simpleicons.org) för riktig logga,
-            eller null för en enkel färgprick (verktyg utan egen logga).
+            eller null för en enkel färgprick (verktyg utan egen logga)
    Lägg till/ta bort fritt – grupperna byggs automatiskt.
    ===================================================================== */
 
