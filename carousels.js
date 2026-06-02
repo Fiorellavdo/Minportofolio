@@ -19,9 +19,9 @@ window.CAROUSELS = [
 
   {
     src: "vaiegna",
-    platform: "linkedin",
+    platform: "linkedIn",
     client: "VAI · egna kanaler",
-    label: "LinkedIn · karusell · Tjänstepaket",
+    label: "Tjänstepaket",
     images: [
       "Media/Vai/En lösning som passar dig - 1.png",
       "Media/Vai/En lösning som passar dig - 2.png",
@@ -33,9 +33,9 @@ window.CAROUSELS = [
 
   {
     src: "vaiegna",
-    platform: "linkedin",
+    platform: "linkedIn",
     client: "VAI · egna kanaler",
-    label: "LinkedIn · karusell · Digital tillväxt",
+    label: "Digital tillväxt",
     images: [
      "Media/Vai/Från lokalt hantverk till lönsam digital tillväxt - 1.png",
      "Media/Vai/Från lokalt hantverk till lönsam digital tillväxt - 2.png",
@@ -47,9 +47,9 @@ window.CAROUSELS = [
 
   {
     src: "vaiegna",
-    platform: "linkedin",
+    platform: "linkedIn",
     client: "VAI · egna kanaler",
-    label: "LinkedIn · karusell · Quiz",
+    label: "Quiz",
     images: [
       "Media/Vai/Gör vår quiz - 1.png",
       "Media/Vai/Gör vår quiz - 2.png",
@@ -65,7 +65,7 @@ window.CAROUSELS = [
     src: "vaiegna",
     platform: "linkedin",
     client: "VAI · egna kanaler",
-    label: "LinkedIn · karusell · Hur funkar det",
+    label: "Hur funkar det",
     images: [
      "Media/Vai/Hur funkar det anlita oss (vai) - 6.png",
      "Media/Vai/Hur funkar det anlita oss (vai) - 7.png",
@@ -77,9 +77,9 @@ window.CAROUSELS = [
 
   {
     src: "vaiegna",
-    platform: "linkedin",
+    platform: "linkedIn",
     client: "VAI · egna kanaler",
-    label: "LinkedIn · karusell · Insikter",
+    label: "Insikter",
     images: [
      "Media/Vai/Insikter vanliga misstag - 1.png",
      "Media/Vai/Insikter vanliga misstag - 2.png",
@@ -93,9 +93,9 @@ window.CAROUSELS = [
 
   {
     src: "vaiegna",
-    platform: "linkedin",
+    platform: "linkedIn",
     client: "VAI · egna kanaler",
-    label: "LinkedIn · karusell · LinkedIn banners",
+    label: "Banners",
     images: [
      "Media/Vai/Linkedin banner - 1.png",
      "Media/Vai/Linkedin banner - 2.png",
@@ -107,9 +107,9 @@ window.CAROUSELS = [
 
   {
     src: "vaiegna",
-    platform: "meta",
+    platform: "Generell",
     client: "VAI · egna kanaler",
-    label: "Instagram · Visitkort 1",
+    label: "Visitkort",
     images: [
      "Media/Vai/visitkort - 1.png",
      "Media/Vai/visitkort - 2.png",
@@ -120,9 +120,9 @@ window.CAROUSELS = [
 
   {
     src: "vaiegna",
-    platform: "meta",
+    platform: "LinkedIn",
     client: "VAI · egna kanaler",
-    label: "Instagram · Quiz 1",
+    label: "Quiz ",
     images: [
       "Media/Vai/Gör vår quiz - 1.png",
       "Media/Vai/Gör vår quiz - 2.png",
@@ -136,9 +136,9 @@ window.CAROUSELS = [
 
   {
     src: "vaiegna",
-    platform: "meta",
+    platform: "LinkedIn",
     client: "VAI · egna kanaler",
-    label: "Instagram · Insikter 1",
+    label: "LinkedIn· Insikter 1",
     images: [
       "Media/Vai/Insikter vanliga misstag - 1.png",
       "Media/Vai/Insikter vanliga misstag - 2.png",
@@ -153,9 +153,9 @@ window.CAROUSELS = [
 
   {
     src: "vaiegna",
-    platform: "meta",
+    platform: "Generell",
     client: "VAI · egna kanaler",
-    label: "Instagram · Team 2",
+    label: "Team",
     images: [
       "Media/Vai/Team bilder - 1.png",
       "Media/Vai/Team bilder - 2.png",
@@ -166,9 +166,9 @@ window.CAROUSELS = [
 
   {
     src: "vaiegna",
-    platform: "meta",
+    platform: "Generell",
     client: "VAI · egna kanaler",
-    label: "Instagram · Team 5",
+    label: "Team",
     images: [
       "Media/Vai/Team bilder - 5.png"
     ]
@@ -176,9 +176,9 @@ window.CAROUSELS = [
 
   {
     src: "vaiegna",
-    platform: "meta",
+    platform: "LinkedIn",
     client: "VAI · egna kanaler",
-    label: "Instagram · Så jobbar vi",
+    label: "Så jobbar vi",
     images: [
       "Media/Vai/Så jobbar vi - 1.png",
       "Media/Vai/Så jobbar vi - 2.png"
@@ -187,11 +187,61 @@ window.CAROUSELS = [
 
   {
     src: "vaiegna",
-    platform: "meta",
+    platform: "Generell",
     client: "VAI · egna kanaler",
-    label: "Instagram · VAI logo",
+    label: "VAI logo",
     images: [
       "Media/Vai/Vai logo.png"
+    ]
+  },
+
+  {
+    src: "vaiegna",
+    platform: "Generell",
+    client: "VAI · egna kanaler",
+    label: "Team",
+    images: [
+      "Media/Vai/team.png"
+    ]
+  },
+
+  {
+    src: "vaiegna",
+    platform: "LinkedIn",
+    client: "VAI · egna kanaler",
+    label: "Merry Christmas",
+    images: [
+      "Media/Vai/Merry Christmas!.mp4"
+    ]
+  },
+
+  {
+    src: "vaiegna",
+    platform: "Meta",
+    client: "VAI · egna kanaler",
+    label: "Quiz Reel",
+    images: [
+      "Media/Vai/Quiz - Reel.mp4"
+    ]
+  },
+
+  {
+    src: "vaiegna",
+    platform: "meta",
+    client: "VAI · egna kanaler",
+    label: "We're back",
+    images: [
+      "Media/Vai/Were-back.mp4"
+    ]
+  },
+
+  {
+    src: "vaiegna",
+    platform: "LinkedIn",
+    client: "VAI · egna kanaler",
+    label: "Hemsidan inlägg",
+    images: [
+      "Media/Vai/hemsidan inlägg (linkedin).mp4"
     ]
   },
 
@@ -199,40 +249,13 @@ window.CAROUSELS = [
 
   {
     src: "vai",
-    platform: "meta",
+    platform: "Meta",
     client: "VAI · kunder",
-    label: "Instagram · (B2B) Första steg Carlssons Mattservice 1",
+    label: "Trafik · Carlssons Mattservice",
     images: [
-      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 1.png"
-    ]
-  },
-
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · (B2B) Första steg Carlssons Mattservice 2",
-    images: [
-      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 2.png"
-    ]
-  },
-
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · (B2B) Första steg Carlssons Mattservice 3",
-    images: [
-      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 3.png"
-    ]
-  },
-
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · (B2B) Första steg Carlssons Mattservice 4",
-    images: [
+      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 1.png",
+      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 2.png",
+      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 3.png",
       "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 4.png"
     ]
   },
@@ -241,77 +264,43 @@ window.CAROUSELS = [
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Instagram · Fönsterputs 1",
+    label: "Försäljning · Fönsterputs",
     images: [
-      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 1.png"
-    ]
-  },
-
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · Fönsterputs 2",
-    images: [
-      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 2.png"
-    ]
-  },
-
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · Fönsterputs 3",
-    images: [
-      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 3.png"
-    ]
-  },
-
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · Fönsterputs 4",
-    images: [
+      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 2.png",
       "Media/Vai kunder/Fönsterputs (meta kampanj)  - 4.png"
     ]
   },
 
-  {
+   {
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Instagram · Företag (hotel1861)",
+    label: "Försäljning · Fönsterputs",
     images: [
-      "Media/Vai kunder/Företag (hotel1861) - 1.png"
+      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 1.png",
+      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 3.png"
     ]
   },
+
 
   {
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Instagram · Gratis samtal 1",
+    label: "Trafik · B2B",
     images: [
-      "Media/Vai kunder/Gratis samtal (meta kampanj) - Carlssons Mattservice - 1.png"
+      "Media/Vai kunder/Företag (hotel1861) - 1.png",
+      "Media/Vai kunder/Företag (hotel1861) - 2.png"
     ]
   },
+
+
 
   {
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Instagram · Gratis samtal 2",
-    images: [
-      "Media/Vai kunder/Gratis samtal (meta kampanj) - Carlssons Mattservice - 2.png"
-    ]
-  },
-
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · Gratis samtal 3",
+    label: "Försäljning · Gratis samtal",
     images: [
       "Media/Vai kunder/Gratis samtal (meta kampanj) - Carlssons Mattservice - 4.png"
     ]
@@ -321,9 +310,9 @@ window.CAROUSELS = [
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Instagram · Hotel 1861 (RALLY VM) 1",
+    label: "Försäljning · Gratis samtal",
     images: [
-      "Media/Vai kunder/Hotel 1861 (RALLY VM) (Instagram-inlägg (45)) - 1.png"
+      "Media/Vai kunder/Gratis samtal (meta kampanj) - Carlssons Mattservice - 2.png",
     ]
   },
 
@@ -331,91 +320,29 @@ window.CAROUSELS = [
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Instagram · Hotel 1861 (RALLY VM) 2",
+    label: "Trafik · RALLY VM",
     images: [
+      "Media/Vai kunder/Hotel 1861 (RALLY VM) (Instagram-inlägg (45)) - 1.png",
       "Media/Vai kunder/Hotel 1861 (RALLY VM) (Instagram-inlägg (45)) - 2.png"
     ]
   },
 
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · Sportlov 1",
-    images: [
-      "Media/Vai kunder/Sportlov (hotel1861) (1080 x 1350 px) - 1.png"
-    ]
-  },
+
 
   {
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Instagram · Sportlov 2",
+    label: "Trafik · Sportlov",
     images: [
+      "Media/Vai kunder/Sportlov (hotel1861) (1080 x 1350 px) - 1.png",
       "Media/Vai kunder/Sportlov (hotel1861) (1080 x 1350 px) - 2.png"
     ]
   },
 
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · Formulär 1",
-    images: [
-      "Media/Vai kunder/formulär (meta kampanj) - Carlssons Mattservice - 7.png"
-    ]
-  },
 
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · Formulär 2",
-    images: [
-      "Media/Vai kunder/formulär (meta kampanj) - Carlssons Mattservice - 8.png"
-    ]
-  },
 
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · Formulär 3",
-    images: [
-      "Media/Vai kunder/formulär (meta kampanj) - Carlssons Mattservice - 9.png"
-    ]
-  },
 
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · Formulär 4",
-    images: [
-      "Media/Vai kunder/formulär (meta kampanj) - Carlssons Mattservice - 10.png"
-    ]
-  },
-
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · Formulär 5",
-    images: [
-      "Media/Vai kunder/formulär (meta kampanj) - Carlssons Mattservice - 11.png"
-    ]
-  },
-
-  {
-    src: "vai",
-    platform: "meta",
-    client: "VAI · kunder",
-    label: "Instagram · Formulär 6",
-    images: [
-      "Media/Vai kunder/formulär (meta kampanj) - Carlssons Mattservice - 12.png"
-    ]
-  },
 
   // ===== EVITY (LinkedIn - enstaka inlägg) =====
 
@@ -423,7 +350,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · Inlägg 1",
+    label: "LinkedIn · ads",
     images: [
       "Media/Evity/1.png"
     ]
@@ -433,7 +360,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · Inlägg 2",
+    label: "LinkedIn · ads",
     images: [
       "Media/Evity/2.png"
     ]
@@ -443,7 +370,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · Inlägg 3",
+    label: "LinkedIn · ads",
     images: [
       "Media/Evity/3.png"
     ]
@@ -453,7 +380,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · Inlägg 4",
+    label: "LinkedIn · ads",
     images: [
       "Media/Evity/4.png"
     ]
@@ -463,7 +390,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · Inlägg 5a",
+    label: "LinkedIn · ads",
     images: [
       "Media/Evity/5 (1).png"
     ]
@@ -474,7 +401,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · Inlägg 6",
+    label: "LinkedIn · ads",
     images: [
       "Media/Evity/6.png"
     ]
@@ -484,7 +411,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · Portfolio 16",
+    label: "LinkedIn · ads",
     images: [
       "Media/Evity/16.png"
     ]
@@ -494,7 +421,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · Portfolio 17",
+    label: "LinkedIn · ads",
     images: [
       "Media/Evity/17.png"
     ]
@@ -504,7 +431,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · Portfolio 18",
+    label: "LinkedIn · ads",
     images: [
       "Media/Evity/18.png"
     ]
@@ -516,7 +443,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 20% rabatt",
+    label: "20% rabatt",
     images: [
       "Media/Primus-Silva/disconut-6.png"
     ]
@@ -526,7 +453,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 20% rabatt",
+    label: "20% rabatt",
     images: [
       "Media/Primus-Silva/disconut-5.png"
     ]
@@ -536,7 +463,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 20% rabatt 1",
+    label: "20% rabatt",
     images: [
       "Media/Primus-Silva/disconut-1.png"
     ]
@@ -546,7 +473,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 20% rabatt 1",
+    label: " 20% rabatt",
     images: [
       "Media/Primus-Silva/disconut-2.png"
     ]
@@ -556,7 +483,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 20% rabatt 1",
+    label: "20% rabatt",
     images: [
       "Media/Primus-Silva/disconut-3.png"
     ]
@@ -566,7 +493,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 20% rabatt 1",
+    label: "20% rabatt",
     images: [
       "Media/Primus-Silva/disconut-4.png"
     ]
@@ -576,7 +503,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 40% kommer snart 1",
+    label: "40% kommer snart",
     images: [
       "Media/Primus-Silva/kommer-snart-1.png"
     ]
@@ -586,7 +513,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 40% kommer snart 2",
+    label: "40% kommer snart",
     images: [
       "Media/Primus-Silva/kommer-snart-2.png"
     ]
@@ -596,7 +523,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 40% kommer snart 3",
+    label: "40% kommer snart",
     images: [
       "Media/Primus-Silva/kommer-snart-3.png"
     ]
@@ -606,7 +533,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 10",
+    label: "Primus",
     images: [
       "Media/Primus-Silva/10.png"
     ]
@@ -616,7 +543,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 20",
+    label: "Primus",
     images: [
       "Media/Primus-Silva/20.png"
     ]
@@ -626,7 +553,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 30",
+    label: "Primus",
     images: [
       "Media/Primus-Silva/30.png"
     ]
@@ -636,7 +563,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 40",
+    label: "Primus",
     images: [
       "Media/Primus-Silva/40.png"
     ]
@@ -646,7 +573,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 50",
+    label: "Primus",
     images: [
       "Media/Primus-Silva/50.png"
     ]
@@ -656,7 +583,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · 60",
+    label: "Primus",
     images: [
       "Media/Primus-Silva/60.png"
     ]
@@ -666,7 +593,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · Video - Copy1",
+    label: "Primus",
     images: [
       "Media/Primus-Silva/Copy1.mp4"
     ]
@@ -676,7 +603,8 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · Video - Copy 2",
+    label: "Primus",
+
     images: [
       "Media/Primus-Silva/Copy 2.mp4"
     ]
@@ -686,7 +614,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · Video - Copy 3",
+    label: "Primus",
     images: [
       "Media/Primus-Silva/Copy 3.mp4"
     ]
@@ -696,7 +624,7 @@ window.CAROUSELS = [
     src: "silva",
     platform: "meta",
     client: "Primus-Silva",
-    label: "Instagram · Video - Helga & Fio Kampanjen",
+    label: "Silva",
     images: [
       "Media/Primus-Silva/Helga & Fio Kampanjen.mp4"
     ]
@@ -708,7 +636,7 @@ window.CAROUSELS = [
     src: "fritid",
     platform: "meta",
     client: "Fritid",
-    label: "Instagram · Jobba med det som betyder något",
+    label: "Ny Utbilning",
     images: [
       "Media/Fritid/Jobba med det som betyder något.png"
     ]
@@ -718,7 +646,7 @@ window.CAROUSELS = [
     src: "fritid",
     platform: "meta",
     client: "Fritid",
-    label: "Instagram · Lägg till lite brödtext",
+    label: "Ny utbildning",
     images: [
       "Media/Fritid/Lägg till lite brödtext.png"
     ]
@@ -728,7 +656,7 @@ window.CAROUSELS = [
     src: "fritid",
     platform: "meta",
     client: "Fritid",
-    label: "Instagram · Säkra ett framtidsyrke",
+    label: "Ny utbildning",
     images: [
       "Media/Fritid/Säkra ett framtidsyrke med stort samhällsbehov 🚀.png"
     ]
@@ -738,84 +666,34 @@ window.CAROUSELS = [
     src: "fritid",
     platform: "meta",
     client: "Fritid",
-    label: "Instagram · Wilmas Cookies",
+    label: "NY Cookies",
     images: [
       "Media/Fritid/Wilmas Cookies.png"
     ]
   },
 
+  {
+    src: "fritid",
+    platform: "meta",
+    client: "Fritid",
+    label: "En plats där unga hittar hem",
+    images: [
+      "Media/Fritid/En plats där unga människor hittar hem.mp4"
+    ]
+  },
+
+  {
+    src: "fritid",
+    platform: "meta",
+    client: "Fritid",
+    label: "IKEA POPUP",
+    images: [
+      "Media/Fritid/KOrv med bröd.png"
+    ]
+  },
+  
   // ===== UTBILDNING (Instagram & LinkedIn - enstaka inlägg) =====
-
-  {
-    src: "utbildning",
-    platform: "meta",
-    client: "Utbildning",
-    label: "Instagram · Boka hos oss (4x5)",
-    images: [
-      "Media/Utbilning/4x5 boka hos oss.png"
-    ]
-  },
-
-  {
-    src: "utbildning",
-    platform: "meta",
-    client: "Utbildning",
-    label: "Instagram · Skapa minnen (4x5)",
-    images: [
-      "Media/Utbilning/4x5 skapa minnen.png"
-    ]
-  },
-
-  {
-    src: "utbildning",
-    platform: "meta",
-    client: "Utbildning",
-    label: "Instagram · Boka hos oss (9x16)",
-    images: [
-      "Media/Utbilning/9x16 boka hos oss.png"
-    ]
-  },
-
-  {
-    src: "utbildning",
-    platform: "meta",
-    client: "Utbildning",
-    label: "Instagram · Skapa minnen (9x16)",
-    images: [
-      "Media/Utbilning/9x16 skapa minnen.png"
-    ]
-  },
-
-  {
-    src: "utbildning",
-    platform: "linkedin",
-    client: "Utbildning",
-    label: "LinkedIn · Recension",
-    images: [
-      "Media/Utbilning/Linkedin recension.png"
-    ]
-  },
-
-  {
-    src: "utbildning",
-    platform: "meta",
-    client: "Utbildning",
-    label: "Instagram · Favoritbild",
-    images: [
-      "Media/Utbilning/Favoritbild - byte av font och copy.jpg"
-    ]
-  },
-
-  {
-    src: "utbildning",
-    platform: "meta",
-    client: "Utbildning",
-    label: "Instagram · Marknadsplan (2)",
-    images: [
-      "Media/Utbilning/Marknadsplan - US (2).jpg"
-    ]
-  },
-
+  
   {
     src: "utbildning",
     platform: "meta",
@@ -825,15 +703,141 @@ window.CAROUSELS = [
       "Media/Utbilning/Marknadsplan - US.jpg"
     ]
   },
+  
+  {
+    src: "utbildning",
+    platform: "meta",
+    client: "Utbildning",
+    label: "Målgrupp & koncept",
+    images: [
+      "Media/Utbilning/Målgrupp, Utveckla tonalitetbranding Content Calendar Content - bild Content - rörligt Copy Koncept för e-mail marketing.mp4"
+    ]
+  },
 
   {
     src: "utbildning",
     platform: "meta",
     client: "Utbildning",
-    label: "Instagram · Målgrupp & koncept",
+    label: "Träningsresa",
     images: [
-      "Media/Utbilning/Målgrupp, Utveckla tonalitetbranding Content Calendar Content - bild Content - rörligt Copy Koncept för e-mail marketing.jpg"
+      "Media/Utbilning/Öka företagets hälsa med en träningsresa till den Franska kusten.mp4"
     ]
   },
+
+  {
+    src: "utbildning",
+    platform: "meta",
+    client: "Utbildning",
+    label: "Instagram · Björkstadens djurklinik",
+    images: [
+      "Media/Utbilning/Björkstadens djurklinik.png"
+    ]
+  },
+
+  
+  
+  {
+    src: "utbildning",
+    platform: "meta",
+    client: "Utbildning",
+    label: "LinkedIn · Marknadsplan",
+    images: [
+      "Media/Utbilning/Marknadsplan - US (2).jpg"
+    ]
+  },
+  
+  
+  
+  
+  
+  {
+    src: "utbildning",
+    platform: "meta",
+    client: "Utbildning",
+    label: "Klädinsamling",
+    images: [
+      "Media/Utbilning/kläd-insamling.png"
+    ]
+  },
+  
+  {
+    src: "utbildning",
+    platform: "meta",
+    client: "Utbildning",
+    label: "Samarbete B2B",
+    images: [
+      "Media/Utbilning/samarbete b2b.mp4"
+    ]
+  },
+  
+  
+  {
+    src: "utbildning",
+    platform: "meta",
+    client: "Utbildning",
+    label: "Något meningsfullt",
+    images: [
+      "Media/Utbilning/genågotmeningsfullt.mp4"
+    ]
+  },
+  
+  {
+    src: "utbildning",
+    platform: "meta",
+    client: "Utbildning",
+    label: "Mood Board",
+    images: [
+      "Media/Utbilning/Blue Aesthetic Mood Board Brand Inspiration Poster.png"
+    ]
+  },
+  
+  {
+    src: "utbildning",
+    platform: "meta",
+    client: "Utbildning",
+    label: "Linkedin",
+    images: [
+      "Media/Utbilning/1.png",
+      "Media/Utbilning/2.png",
+      "Media/Utbilning/3.png",
+      "Media/Utbilning/4.png",
+      "Media/Utbilning/5.png",
+    ]
+  },
+
+  {
+    src: "utbildning",
+    platform: "meta",
+    client: "Utbildning",
+    label: "Meta",
+    images: [
+      "Media/Utbilning/4x5 boka hos oss.png",
+      "Media/Utbilning/4x5 skapa minnen.png"
+    ]
+  },
+  
+  {
+    src: "utbildning",
+    platform: "linkedin",
+    client: "Utbildning",
+    label: "Linkedin · Recension",
+    images: [
+      "Media/Utbilning/Linkedin recension.png"
+    ]
+  },
+
+  {
+    src: "utbildning",
+    platform: "meta",
+    client: "Utbildning",
+    label: "Meta",
+    images: [
+      "Media/Utbilning/9x16 boka hos oss.png",
+      "Media/Utbilning/9x16 skapa minnen.png",
+      "Media/Utbilning/Favoritbild - byte av font och copy.jpg"
+    ]
+  },
+  
+  
 
 ];
