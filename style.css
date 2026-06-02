@@ -214,3 +214,17 @@ textarea{min-height:110px;resize:vertical}
 /* liggande case spänner över hela gridbredden */
 .show-grid .mock.wide{grid-column:1 / -1}
 .show-grid .mock.wide .carousel .track img{width:100%}
+
+/* ===================== EXTRA MOBIL-FINJUSTERING (smala skärmar) ===================== */
+@media(max-width:480px){
+  .wrap{padding:0 20px}
+  .nav-inner{padding:14px 20px}
+  .logo{font-size:.98rem}
+  .show-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+  .pf-tabs{gap:8px}
+  .pf-tab{padding:8px 14px;font-size:.82rem}
+  .filters{gap:8px}
+  .filter{padding:8px 14px;font-size:.8rem}
+  .chip{width:48px;height:48px}
+  .page-top{padding:130px 0 30px}
+}

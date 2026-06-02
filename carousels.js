@@ -518,7 +518,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Instagram · 20% rabatt",
     images: [
-      "Media/Primus-Silva/ 20% disconut 2.png"
+      "Media/Primus-Silva/disconut-6.png"
     ]
   },
 
@@ -528,7 +528,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Instagram · 20% rabatt",
     images: [
-      "Media/Primus-Silva/disconut 5.png"
+      "Media/Primus-Silva/disconut-5.png"
     ]
   },
 
@@ -538,7 +538,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Instagram · 20% rabatt 1",
     images: [
-      "Media/Primus-Silva/disconut 1.png"
+      "Media/Primus-Silva/disconut-1.png"
     ]
   },
 
@@ -548,7 +548,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Instagram · 20% rabatt 1",
     images: [
-      "Media/Primus-Silva/disconut 2.png"
+      "Media/Primus-Silva/disconut-2.png"
     ]
   },
 
@@ -558,7 +558,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Instagram · 20% rabatt 1",
     images: [
-      "Media/Primus-Silva/disconut 3.png"
+      "Media/Primus-Silva/disconut-3.png"
     ]
   },
 
@@ -568,7 +568,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Instagram · 20% rabatt 1",
     images: [
-      "Media/Primus-Silva/disconut 4.png"
+      "Media/Primus-Silva/disconut-4.png"
     ]
   },
 
@@ -578,7 +578,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Instagram · 40% kommer snart 1",
     images: [
-      "Media/Primus-Silva/kommer snart 1.png"
+      "Media/Primus-Silva/kommer-snart-1.png"
     ]
   },
 
@@ -588,7 +588,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Instagram · 40% kommer snart 2",
     images: [
-      "Media/Primus-Silva/kommer snart 2.png"
+      "Media/Primus-Silva/kommer-snart-2.png"
     ]
   },
 
@@ -598,7 +598,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Instagram · 40% kommer snart 3",
     images: [
-      "Media/Primus-Silva/kommer snart 3.png"
+      "Media/Primus-Silva/kommer-snart-3.png"
     ]
   },
 
