@@ -3,289 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fiorella Proos Di Giulio – Digital marknadsföring, innehållsproduktion och sociala medier.">
 <title>Fiorella Proos Di Giulio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<nav id="nav">
+<!--NAV-->
+<nav>
   <div class="nav-inner">
-    <span class="nav-logo">FPG</span>
+    <a href="index.html" class="logo">Fiorella Proos Di Giulio</a>
     <div class="nav-links">
-      <a class="active" onclick="showPage('om',this)">Om mig</a>
-      <a onclick="showPage('portfolio',this)">Portfolio</a>
+      <a href="index.html" class="current">Hem</a>
+      <a href="om.html">Om mig</a>
+      <a href="showroom.html">Showroom</a>
+      <a href="profil.html">Grafisk profil</a>
+      <a href="kontakt.html">Kontakt</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Växla tema">☾</button>
     </div>
+    <button class="burger" id="burger" aria-label="Meny">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Hem</a><a href="om.html">Om mig</a><a href="showroom.html">Showroom</a><a href="profil.html">Grafisk profil</a><a href="kontakt.html">Kontakt</a>
   </div>
 </nav>
 
-<!-- ═══════════════ OM MIG ═══════════════ -->
-<div class="page active" id="page-om">
-
-  <section class="hero">
-    <div class="hero-text">
-      <p class="hero-eyebrow">Digital Marketing Specialist</p>
-      <h1>Fiorella<br><em>Proos Di Giulio</em></h1>
-      <p class="hero-body">Jag trivs bäst när kreativitet möter data — från innehållsproduktion och SEO till paid media och analys. Erfarenhet från byrå, e-handel och konsultuppdrag.</p>
-      <a class="cta-btn" onclick="showPage('portfolio', document.querySelectorAll('.nav-links a')[1])">Se portfolio →</a>
+<header class="hero wrap">
+  <div class="blob" style="background:var(--green);width:420px;height:420px;top:120px;right:-160px"></div>
+  <div class="blob" style="background:var(--blue);width:340px;height:340px;bottom:60px;left:-140px"></div>
+  <div class="reveal">
+    <div class="eyebrow">Falun · Dalarna</div>
+    <h1>Innehåll som får människor att <em>känna</em> något.</h1>
+    <p class="intro">Jag jobbar med <b>digital marknadsföring, innehållsproduktion och sociala medier</b> — från första idé till färdig publicering och uppföljning.</p>
+    <div class="cta-row">
+      <a href="showroom.html" class="btn btn-primary">Se mitt content</a>
+      <a href="om.html" class="btn btn-ghost">Om mig</a>
     </div>
-    <div class="hero-img">
-      <div class="profile-frame" id="profile-circle">
-        <div class="profile-placeholder">
-          <span class="pp-initials">FPG</span>
-        </div>
-      </div>
-      <div class="hero-floater">Umeå, Sverige</div>
-    </div>
-  </section>
+  </div>
+  <div class="scroll-hint reveal">Scrolla ↓</div>
+</header>
 
-  <section class="stats-bar">
-    <div class="stat-item"><span class="stat-n">4+</span><span class="stat-l">Års erfarenhet</span></div>
-    <div class="stat-div"></div>
-    <div class="stat-item"><span class="stat-n">3</span><span class="stat-l">Branscher</span></div>
-    <div class="stat-div"></div>
-    <div class="stat-item"><span class="stat-n">10+</span><span class="stat-l">Verktyg</span></div>
-    <div class="stat-div"></div>
-    <div class="stat-item"><span class="stat-n">2</span><span class="stat-l">Utbildningar</span></div>
-  </section>
-
-  <section class="about-grid">
-    <div class="about-left">
-      <p class="section-label">Kompetenser</p>
-      <h2>Vad jag gör</h2>
-      <p class="about-desc">Bred erfarenhet inom digital marknadsföring med fokus på att skapa mätbara resultat genom kreativt innehåll och datadriven strategi.</p>
-    </div>
-    <div class="about-right">
-      <div class="skill-group">
-        <h3>Marknadsföring</h3>
-        <div class="skill-pills">
-          <span>SEO</span><span>Content marketing</span><span>Paid social</span><span>Google Ads</span><span>Kampanjplanering</span><span>Digital analys</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>Verktyg</h3>
-        <div class="skill-pills">
-          <span>GA4</span><span>Looker Studio</span><span>Semrush</span><span>Meta Ads</span><span>LinkedIn Ads</span><span>Shopify</span><span>Klaviyo</span><span>Canva</span><span>CapCut</span><span>GTM</span><span>Screaming Frog</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>Teknik</h3>
-        <div class="skill-pills muted">
-          <span>HTML/CSS</span><span>JavaScript</span><span>React</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="timeline-section">
-    <p class="section-label">Karriär</p>
-    <h2>Erfarenhet</h2>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-dot active"></div>
-        <div class="tl-content">
-          <div class="tl-header">
-            <span class="tl-role">Digital Marketing Specialist</span>
-            <span class="tl-year">2025 – nu</span>
-          </div>
-          <span class="tl-company">VAI Marketing · Umeå</span>
-          <p>Ansvarar för byråns organiska närvaro i sociala medier, SEO, webbproduktion och koordinering av kampanjer från idé till publicering.</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-header">
-            <span class="tl-role">Konsult – Digital Marketing Specialist</span>
-            <span class="tl-year">LIA 2025</span>
-          </div>
-          <span class="tl-company">Evity · Umeå</span>
-          <p>SEO-analyser, sökoptimerat innehåll, varumärkesutveckling och grafisk profil.</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-header">
-            <span class="tl-role">Digital Marketing Specialist Intern</span>
-            <span class="tl-year">LIA 2024</span>
-          </div>
-          <span class="tl-company">Primus-Silva Sweden AB · Umeå / Stockholm</span>
-          <p>E-handel i Shopify, innehåll för webb, kampanjer och nyhetsbrev. Uppföljning i Looker Studio.</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-header">
-            <span class="tl-role">Säljare</span>
-            <span class="tl-year">2021–2025</span>
-          </div>
-          <span class="tl-company">Stadium Outlet · Umeå</span>
-          <p>KPI-ansvar, kundbemötande. Bidrog till Bästa butik Region Nord 22/23.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="edu-section">
-    <p class="section-label">Utbildning</p>
-    <h2>Akademisk bakgrund</h2>
-    <div class="edu-cards">
-      <div class="edu-card">
-        <div class="edu-year">2023 – 2025</div>
-        <h3>Yrkeshögskoleexamen<br>Digital Marketing Specialist</h3>
-        <p class="edu-school">IHM Business School</p>
-        <ul>
-          <li>SEO & SEM (Google Ads)</li>
-          <li>Paid social & influencer marketing</li>
-          <li>Digital analys & A/B-testning</li>
-          <li>Marketing automation</li>
-        </ul>
-      </div>
-      <div class="edu-card">
-        <div class="edu-year">2025 – 2026</div>
-        <h3>Innehållsproduktion<br>för digitala medier</h3>
-        <p class="edu-school">Qlok</p>
-        <ul>
-          <li>Strategiskt innehåll</li>
-          <li>Storytelling & varumärkeskommunikation</li>
-          <li>Analys & automatisering</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact-section" id="contact-anchor">
-    <div class="contact-inner">
-      <p class="section-label light">Kontakt</p>
-      <h2>Låt oss prata</h2>
-      <div class="contact-items">
-        <div class="contact-item"><span class="ci-label">Telefon</span><span>070-592 27 04</span></div>
-        <div class="contact-item"><span class="ci-label">E-post</span><span>Digiuliofiorella@gmail.com</span></div>
-        <div class="contact-item"><span class="ci-label">Ort</span><span>Umeå, Sverige</span></div>
-      </div>
-    </div>
-  </section>
-
-</div><!-- /page-om -->
-
-
-<!-- ═══════════════ PORTFOLIO ═══════════════ -->
-<div class="page" id="page-portfolio">
-
-  <section class="port-hero">
-    <p class="section-label">Portfolio</p>
-    <h1>Skapat <em>innehåll</em></h1>
-    <p>Urval av kampanjer, grafik och innehåll. Klicka på en bild för att förstora.</p>
-  </section>
-
-  <!-- VAI -->
-  <section class="port-section">
-    <div class="port-header">
-      <div>
-        <span class="port-tag">2025 – nu</span>
-        <h2>VAI Marketing</h2>
-        <p>Organisk social media, SEO, webbproduktion och kampanjkoordinering</p>
-      </div>
-    </div>
-    <div class="port-grid" id="grid-vai"></div>
-  </section>
-
-  <!-- EVITY -->
-  <section class="port-section">
-    <div class="port-header">
-      <div>
-        <span class="port-tag">LIA 2025</span>
-        <h2>Evity</h2>
-        <p>SEO-analyser, sökoptimerat innehåll och varumärkesutveckling</p>
-      </div>
-    </div>
-
-    <div class="results-grid">
-      <div class="res-group">
-        <div class="res-group-label">SEO & organisk trafik <span class="res-period">17 feb – 15 apr 2025 vs perioden innan</span></div>
-        <div class="res-cards">
-          <div class="res-card"><div class="res-num">+80%</div><div class="res-lbl">Klick (Google Search)<br><small>2 540 vs 1 410 klick</small></div></div>
-          <div class="res-card"><div class="res-num">+55%</div><div class="res-lbl">CTR<br><small>3,1% vs 2,0%</small></div></div>
-          <div class="res-card"><div class="res-num">+15%</div><div class="res-lbl">Exponeringar<br><small>83 100 vs 72 100</small></div></div>
-          <div class="res-card"><div class="res-num">+200%</div><div class="res-lbl">Engagerade org. sessioner<br><small>1 181 sessioner</small></div></div>
-          <div class="res-card"><div class="res-num">+258%</div><div class="res-lbl">Organic Social sessioner<br><small>43 sessioner</small></div></div>
-          <div class="res-card"><div class="res-num">+51%</div><div class="res-lbl">Organic Search sessioner<br><small>1 679 sessioner</small></div></div>
-        </div>
-      </div>
-      <div class="res-group">
-        <div class="res-group-label">Google Ads <span class="res-period">24 feb – 5 maj 2025</span></div>
-        <div class="res-cards">
-          <div class="res-card"><div class="res-num">1 661</div><div class="res-lbl">Klick totalt</div></div>
-          <div class="res-card"><div class="res-num">2,11%</div><div class="res-lbl">CTR</div></div>
-          <div class="res-card"><div class="res-num">5 901</div><div class="res-lbl">Aktiva användare<br><small>+8,3% vs perioden innan</small></div></div>
-          <div class="res-card"><div class="res-num">5 618</div><div class="res-lbl">Nya användare<br><small>+7,2% vs perioden innan</small></div></div>
-          <div class="res-card"><div class="res-num">+358%</div><div class="res-lbl">Paid Search engag. sess.</div></div>
-          <div class="res-card"><div class="res-num">+775%</div><div class="res-lbl">Organic Social engag. sess.</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="port-grid" id="grid-evity"></div>
-  </section>
-
-  <!-- SILVA -->
-  <section class="port-section">
-    <div class="port-header">
-      <div>
-        <span class="port-tag">LIA 2024</span>
-        <h2>Primus-Silva Sweden AB</h2>
-        <p>Copywriting, textanpassning för Meta & sociala medier, e-postflöden i Klaviyo</p>
-      </div>
-    </div>
-    <p class="credit-note">ⓘ Foton tagna av Primus-Silvas fotografer. Jag ansvarade för att skapa textsättning, anpassning för Meta och tillsammans med några andra ta fram ett förslag för e-postflödenas struktur och innehåll.</p>
-    <div class="port-grid" id="grid-silva"></div>
-  </section>
-
-  <!-- IHM -->
-  <section class="port-section">
-    <div class="port-header">
-      <div>
-        <span class="port-tag">2023 – 2025</span>
-        <h2>IHM Business School</h2>
-        <p>Skolprojekt, kampanjuppgifter och examinationsarbeten</p>
-      </div>
-    </div>
-    <div class="port-grid" id="grid-ihm"></div>
-  </section>
-
-  <!-- EGET -->
-  <section class="port-section">
-    <div class="port-header">
-      <div>
-        <span class="port-tag">Eget</span>
-        <h2>Hobby & frilansprojekt</h2>
-        <p>Innehåll och projekt skapade på egen hand — utanför jobb och skola</p>
-      </div>
-    </div>
-    <div class="port-grid" id="grid-eget"></div>
-  </section>
-
-  <section class="contact-section">
-    <div class="contact-inner">
-      <p class="section-label light">Kontakt</p>
-      <h2>Låt oss prata</h2>
-      <div class="contact-items">
-        <div class="contact-item"><span class="ci-label">Telefon</span><span>070-592 27 04</span></div>
-        <div class="contact-item"><span class="ci-label">E-post</span><span>Digiuliofiorella@gmail.com</span></div>
-        <div class="contact-item"><span class="ci-label">Ort</span><span>Umeå, Sverige</span></div>
-      </div>
-    </div>
-  </section>
-
-</div><!-- /page-portfolio -->
-
-<!-- LIGHTBOX -->
-<div class="lbx" id="lbx" onclick="closeLbx()">
-  <button class="lbx-close" onclick="closeLbx()">✕</button>
-  <img id="lbx-img" src="" alt="">
+<div class="marquee reveal">
+  <span>Sociala medier <i>·</i> Content <i>·</i> Paid social <i>·</i> SEO <i>·</i> Storytelling <i>·</i> Video <i>·</i> Kampanjer <i>·</i> Analys <i>·</i> Sociala medier <i>·</i> Content <i>·</i> Paid social <i>·</i> SEO <i>·</i> Storytelling <i>·</i> Video <i>·</i> Kampanjer <i>·</i> Analys <i>·</i> </span>
 </div>
+
+<section class="tri wrap">
+  <div class="c reveal"><div class="n">01</div><h3>Idéer</h3><p>Jag gillar att hitta vinklar och berättelser som gör innehåll intressant och relevant.</p></div>
+  <div class="c reveal"><div class="n">02</div><h3>Planering</h3><p>Bakom bra innehåll finns ofta en tydlig strategi och en genomtänkt plan.</p></div>
+  <div class="c reveal"><div class="n">03</div><h3>Utveckling</h3><p>Genom att följa upp och analysera resultat går det att förbättra innehållet över tid.</p></div>
+</section>
+
+<footer>
+  © 2026 Fiorella Proos Di Giulio · Falun · <a href="kontakt.html">Hör av dig →</a>
+</footer>
 
 <script src="script.js"></script>
 </body>

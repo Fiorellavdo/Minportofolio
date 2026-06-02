@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Grafiska profiler skapade av Fiorella Proos Di Giulio.">
+<title>Grafisk profil · Fiorella Proos Di Giulio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Inter:wght@400;500;600;700&family=Exo+2:ital,wght@0,400;1,500&family=Montserrat:wght@400;500&family=Oswald:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Fiorella Proos Di Giulio</a>
+    <div class="nav-links">
+      <a href="index.html">Hem</a>
+      <a href="om.html">Om mig</a>
+      <a href="showroom.html">Showroom</a>
+      <a href="profil.html" class="current">Grafisk profil</a>
+      <a href="kontakt.html">Kontakt</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Växla tema">☾</button>
+    </div>
+    <button class="burger" id="burger" aria-label="Meny">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Hem</a><a href="om.html">Om mig</a><a href="showroom.html">Showroom</a><a href="profil.html">Grafisk profil</a><a href="kontakt.html">Kontakt</a>
+  </div>
+</nav>
+
+<header class="page-top wrap">
+  <div class="blob" style="background:var(--green);width:380px;height:380px;top:80px;right:-160px"></div>
+  <div class="eyebrow reveal">Grafisk profil</div>
+  <h1 class="reveal">När idéer får ett visuellt uttryck.</h1>
+  <p class="reveal">Varje profil är skapad för att spegla företagets personlighet och skapa en tydlig, sammanhållen identitet.</p>
+</header>
+
+<section class="wrap" style="padding-bottom:90px">
+  <div class="pf-tabs reveal" id="pfTabs"></div>
+  <div id="pfPanels"></div>
+</section>
+
+<footer>
+  © 2026 Fiorella Proos Di Giulio · Falun · <a href="kontakt.html">Hör av dig →</a>
+</footer>
+
+<script src="profiles.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
