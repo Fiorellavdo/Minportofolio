@@ -3,7 +3,7 @@
    ---------------------------------------------------------------------
    Varje verktyg: { name, icon }
      icon = Simple Icons-slug (https://simpleicons.org) för riktig logga,
-            eller null för en enkel färgprick (verktyg utan egen logga)
+            eller null för en bokstavscirkel (verktyg utan egen logga).
    Lägg till/ta bort fritt – grupperna byggs automatiskt.
    ===================================================================== */
 
@@ -31,7 +31,7 @@ window.TOOLS = [
       { name: "Looker Studio", icon: "looker" },
       { name: "Power BI", icon: null },
       { name: "Google Search Console", icon: "googlesearchconsole" },
-      { name: "Google Trends", icon: "googletrends" },
+      { name: "Google Trends", icon: null },
       { name: "Semrush", icon: "semrush" },
       { name: "Screaming Frog", icon: null },
       { name: "GTM", icon: "googletagmanager" }
@@ -54,7 +54,7 @@ window.TOOLS = [
       { name: "Mailchimp", icon: "mailchimp" },
       { name: "HubSpot", icon: "hubspot" },
       { name: "Brevo", icon: "brevo" },
-      { name: "Microsoft 365", icon: "microsoft365" },
+      { name: "Microsoft 365", icon: null },
       { name: "Dropbox", icon: "dropbox" }
     ]
   },
