@@ -1,196 +1,603 @@
-// reveal on scroll
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+/* =====================================================================
+   Portfolio – gemensam JavaScript
+   Innehåll:
+     1. Fade-in vid scroll
+     2. Tema (ljust/mörkt) som sparas
+     3. Mobilmeny
+     4. Showroom (kort, karuseller, video, filter, lightbox)
+     5. Grafisk profil (flikar)
+     6. Verktyg (ikoner på Om mig)
+   ===================================================================== */
 
-// theme
-const tb=document.getElementById('themeBtn');
-if(tb)tb.addEventListener('click',()=>{
-  const d=document.documentElement.getAttribute('data-theme')==='dark';
-  document.documentElement.setAttribute('data-theme',d?'light':'dark');
-  tb.textContent=d?'☾':'☀';
-});
 
-// mobile menu
-const bg=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
-if(bg)bg.addEventListener('click',()=>mm.classList.toggle('open'));
-
-// ===== showroom (only on showroom page) =====
-const grid=document.getElementById('showGrid');
-if(grid){
-  // 1) Bygg karusellkort automatiskt från carousels.js
-  function carouselHTML(images){
-    const imgs=images.map((s,i)=>{
-      if(s.endsWith('.mp4')){
-        return `<video src="${s}" controls style="width:100%; height:auto;" loading="lazy"></video>`;
-      } else {
-        return `<img src="${s}" alt="Slide ${i+1}" loading="lazy">`;
+/* ---------------------------------------------------------------------
+   Hjälpfunktion: fade-in när ett element scrollas in i vyn
+   --------------------------------------------------------------------- */
+function revealOnScroll(elements) {
+  const observer = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        obs.unobserve(entry.target);
       }
-    }).join('');
-    return `<div class="carousel" data-carousel>
-      <div class="track">${imgs}</div>
-      <button class="nav prev" aria-label="Föregående">‹</button>
-      <button class="nav next" aria-label="Nästa">›</button>
-      <div class="cdots"></div>
-    </div>`;
+    });
+  }, { threshold: 0.12 });
+
+  elements.forEach(function (element) {
+    observer.observe(element);
+  });
+}
+
+// Kör på alla element med klassen "reveal" som finns vid sidladdning
+revealOnScroll(document.querySelectorAll('.reveal'));
+
+
+/* ---------------------------------------------------------------------
+   1. Tema – spara valet och behåll det på alla sidor
+   --------------------------------------------------------------------- */
+const themeButton = document.getElementById('themeBtn');
+
+function applyTheme(mode) {
+  document.documentElement.setAttribute('data-theme', mode);
+
+  if (themeButton) {
+    themeButton.textContent = (mode === 'dark') ? '☀' : '☾';
   }
-  if(window.CAROUSELS){
-    window.CAROUSELS.forEach(c=>{
-      const fig=document.createElement('figure');
-      fig.className='mock reveal'+(c.wide?' wide':'');
-      fig.dataset.s=c.src; fig.dataset.p=c.platform;
-      fig.style.margin='0';
-      fig.innerHTML=carouselHTML(c.images)+
-        `<div class="mclient">${c.client}</div><div class="mlabel">${c.label}</div>`;
-      grid.appendChild(fig);
+}
+
+// Läs in sparat tema direkt vid sidladdning (annars ljust)
+const savedTheme = localStorage.getItem('theme') || 'light';
+applyTheme(savedTheme);
+
+if (themeButton) {
+  themeButton.addEventListener('click', function () {
+    const currentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const nextTheme = currentlyDark ? 'light' : 'dark';
+
+    applyTheme(nextTheme);
+    localStorage.setItem('theme', nextTheme);
+  });
+}
+
+
+/* ---------------------------------------------------------------------
+   2. Mobilmeny – öppna/stäng vid klick på hamburgaren
+   --------------------------------------------------------------------- */
+const burgerButton = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (burgerButton) {
+  burgerButton.addEventListener('click', function () {
+    mobileMenu.classList.toggle('open');
+  });
+}
+
+
+/* ---------------------------------------------------------------------
+   3. Showroom – byggs bara om sidan har rutnätet #showGrid
+   --------------------------------------------------------------------- */
+const showGrid = document.getElementById('showGrid');
+
+if (showGrid) {
+
+  /* --- Små hjälpfunktioner --- */
+
+  // Avgör om en fil är en video
+  function isVideoFile(path) {
+    return /\.(mp4|webm|mov)$/i.test(path);
+  }
+
+  // Normalisera plattformsnamn så filtret matchar oavsett stavning
+  function normalizePlatform(platform) {
+    const value = (platform || '').toLowerCase();
+
+    if (value.includes('linkedin')) {
+      return 'linkedin';
+    }
+    if (value.includes('meta')) {
+      return 'meta';
+    }
+    return 'ovrigt';
+  }
+
+
+  /* --- Bygg HTML för olika medietyper --- */
+
+  function buildVideoHTML(path) {
+    return `
+      <div class="media-video" data-video>
+        <video src="${path}" preload="metadata" playsinline></video>
+        <button class="play-btn" aria-label="Spela">▶</button>
+      </div>`;
+  }
+
+  function buildSingleImageHTML(path, label) {
+    return `
+      <div class="media-single">
+        <img src="${path}" alt="${label || ''}" loading="lazy">
+      </div>`;
+  }
+
+  function buildCarouselHTML(images) {
+    const slides = images.map(function (path, index) {
+      if (isVideoFile(path)) {
+        return `<video src="${path}" preload="metadata" playsinline></video>`;
+      }
+      return `<img src="${path}" alt="Slide ${index + 1}" loading="lazy">`;
+    }).join('');
+
+    return `
+      <div class="carousel" data-carousel>
+        <div class="track">${slides}</div>
+        <button class="nav prev" aria-label="Föregående">‹</button>
+        <button class="nav next" aria-label="Nästa">›</button>
+        <div class="cdots"></div>
+      </div>`;
+  }
+
+  // Välj rätt media-HTML utifrån antal filer och typ
+  function buildMediaHTML(item) {
+    const images = item.images;
+    const isSingleFile = images.length === 1;
+
+    if (isSingleFile && isVideoFile(images[0])) {
+      return buildVideoHTML(images[0]);
+    }
+    if (isSingleFile) {
+      return buildSingleImageHTML(images[0], item.label);
+    }
+    return buildCarouselHTML(images);
+  }
+
+
+  /* --- Skapa ett kort (figure) för ett innehållsobjekt --- */
+
+  function buildCard(item) {
+    const card = document.createElement('figure');
+
+    const isCarousel = item.images.length > 1;
+    const isVideo = item.images.length === 1 && isVideoFile(item.images[0]);
+
+    const classNames = ['mock', 'reveal'];
+    if (item.wide) {
+      classNames.push('wide');
+    }
+    if (isCarousel) {
+      classNames.push('is-carousel');
+    }
+    if (isVideo) {
+      classNames.push('is-video');
+    }
+
+    card.className = classNames.join(' ');
+    card.dataset.s = item.src;
+    card.dataset.p = normalizePlatform(item.platform);
+    card.style.margin = '0';
+
+    const media = buildMediaHTML(item);
+    const caption = `
+      <div class="mclient">${item.client}</div>
+      <div class="mlabel">${item.label}</div>`;
+
+    card.innerHTML = media + caption;
+    return card;
+  }
+
+  // Bygg alla kort från datafilen
+  if (window.CAROUSELS) {
+    window.CAROUSELS.forEach(function (item) {
+      const card = buildCard(item);
+      showGrid.appendChild(card);
     });
   }
 
-  // 2) Gör varje karusell interaktiv
-  function initCarousel(root){
-    const track=root.querySelector('.track');
-    const slides=[...track.children];
-    const dotsWrap=root.querySelector('.cdots');
-    const prev=root.querySelector('.prev'), next=root.querySelector('.next');
-    let idx=0;
-    slides.forEach((_,i)=>{
-      const d=document.createElement('span');
-      if(i===0)d.classList.add('on');
-      d.addEventListener('click',e=>{e.stopPropagation();go(i)});
-      dotsWrap.appendChild(d);
+
+  /* --- Gör en karusell interaktiv (pilar, prickar, swipe) --- */
+
+  function initCarousel(carousel) {
+    const track = carousel.querySelector('.track');
+    const slides = Array.from(track.children);
+    const dotsWrapper = carousel.querySelector('.cdots');
+    const prevButton = carousel.querySelector('.prev');
+    const nextButton = carousel.querySelector('.next');
+
+    let currentIndex = 0;
+
+    // Skapa en prick per slide
+    slides.forEach(function (slide, index) {
+      const dot = document.createElement('span');
+
+      if (index === 0) {
+        dot.classList.add('on');
+      }
+
+      dot.addEventListener('click', function (event) {
+        event.stopPropagation();
+        goToSlide(index);
+      });
+
+      dotsWrapper.appendChild(dot);
     });
-    const dots=[...dotsWrap.children];
-    function go(i){
-      idx=Math.max(0,Math.min(i,slides.length-1));
-      track.style.transform=`translateX(-${idx*100}%)`;
-      dots.forEach((d,j)=>d.classList.toggle('on',j===idx));
-      prev.disabled=idx===0; next.disabled=idx===slides.length-1;
+
+    const dots = Array.from(dotsWrapper.children);
+
+    // Visa en viss slide
+    function goToSlide(index) {
+      currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      dots.forEach(function (dot, dotIndex) {
+        dot.classList.toggle('on', dotIndex === currentIndex);
+      });
+
+      prevButton.disabled = currentIndex === 0;
+      nextButton.disabled = currentIndex === slides.length - 1;
     }
-    prev.addEventListener('click',e=>{e.stopPropagation();go(idx-1)});
-    next.addEventListener('click',e=>{e.stopPropagation();go(idx+1)});
-    // swipe på touch
-    let x0=null;
-    track.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
-    track.addEventListener('touchend',e=>{
-      if(x0===null)return;
-      const dx=e.changedTouches[0].clientX-x0;
-      if(Math.abs(dx)>40)go(idx+(dx<0?1:-1));
-      x0=null;
+
+    prevButton.addEventListener('click', function (event) {
+      event.stopPropagation();
+      goToSlide(currentIndex - 1);
     });
-    go(0);
+
+    nextButton.addEventListener('click', function (event) {
+      event.stopPropagation();
+      goToSlide(currentIndex + 1);
+    });
+
+    // Swipe på touch-skärmar
+    let touchStartX = null;
+
+    track.addEventListener('touchstart', function (event) {
+      touchStartX = event.touches[0].clientX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', function (event) {
+      if (touchStartX === null) {
+        return;
+      }
+
+      const deltaX = event.changedTouches[0].clientX - touchStartX;
+
+      if (Math.abs(deltaX) > 40) {
+        const direction = deltaX < 0 ? 1 : -1;
+        goToSlide(currentIndex + direction);
+      }
+
+      touchStartX = null;
+    });
+
+    goToSlide(0);
   }
+
   document.querySelectorAll('[data-carousel]').forEach(initCarousel);
 
-  // 3) Filter
-  const mocks=document.querySelectorAll('.mock');
-  let curSrc='alla',curPlat='alla';
-  function apply(){
-    mocks.forEach(m=>{
-      const okS=curSrc==='alla'||m.dataset.s===curSrc;
-      const okP=curPlat==='alla'||m.dataset.p===curPlat;
-      m.classList.toggle('hide',!(okS&&okP));
-    });
-  }
-  document.querySelectorAll('.filter[data-s]').forEach(b=>b.addEventListener('click',()=>{
-    document.querySelectorAll('.filter[data-s]').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');curSrc=b.dataset.s;apply();
-  }));
-  document.querySelectorAll('.filter[data-p]').forEach(b=>b.addEventListener('click',()=>{
-    document.querySelectorAll('.filter[data-p]').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');curPlat=b.dataset.p;apply();
-  }));
 
-  // reveal de nyskapade korten
-  document.querySelectorAll('#showGrid .reveal').forEach(el=>{
-    new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.12}).observe(el);
-  });
+  /* --- Video: spela/pausa vid klick --- */
 
-  // 4) Lightbox – öppnar mockup/karusell förstorad
-  const lb=document.getElementById('lightbox'),lbI=document.getElementById('lbInner');
-  document.querySelectorAll('.mock').forEach(m=>m.addEventListener('click',e=>{
-    if(e.target.closest('.nav')||e.target.closest('.cdots'))return; // klick på pilar/prickar bläddrar, öppnar inte
-    const inner=m.querySelector('.dev,.reel,.carousel');
-    lbI.innerHTML=inner.outerHTML;
-    lb.classList.add('open');
-    const c=lbI.querySelector('[data-carousel]');
-    if(c)initCarousel(c);
-  }));
-  document.getElementById('lbClose').addEventListener('click',()=>lb.classList.remove('open'));
-  lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open')});
-}
+  function initVideo(container) {
+    const video = container.querySelector('video');
+    const playButton = container.querySelector('.play-btn');
 
-// ===== grafisk profil (only on profil page) =====
-const pfTabs=document.getElementById('pfTabs');
-if(pfTabs && window.PROFILES){
-  const pfPanels=document.getElementById('pfPanels');
-  function logoHTML(p){
-    const inner = p.logo.type==='img'
-      ? `<img src="${p.logo.src}" alt="${p.name} logotyp">`
-      : `<span class="txt" style="color:${p.logo.color||'#fff'}">${p.logo.text}</span>`;
-    return `<div class="pf-logo" style="background:${p.bg||'#222'}">${inner}</div>`;
-  }
-  function colorsHTML(p){
-    const sw=p.colors.map(c=>`<div class="pf-sw"><div class="chip" style="background:${c.hex}"></div><div class="hex">${c.hex}</div><div class="nm">${c.name||''}</div></div>`).join('');
-    return `<div class="pf-card"><div class="lbl">Färgpalett</div><div class="pf-swatches">${sw}</div></div>`;
-  }
-  function fontsHTML(p){
-    const f=p.fonts.map((ft,i)=>{
-      const st=[];
-      if(ft.css)st.push('font-family:'+ft.css);
-      if(ft.italic)st.push('font-style:italic');
-      if(ft.weight)st.push('font-weight:'+ft.weight);
-      return `<div class="pf-font ${i>0?'sans':''}"><div class="role">${ft.name} · ${ft.role}</div><div class="sample" style="${st.join(';')}">${ft.sample}</div></div>`;
-    }).join('');
-    return `<div class="pf-card"><div class="lbl">Typografi</div>${f}</div>`;
-  }
-  window.PROFILES.forEach((p,i)=>{
-    const tab=document.createElement('button');
-    tab.className='pf-tab'+(i===0?' active':'');
-    tab.textContent=p.name;
-    tab.addEventListener('click',()=>{
-      document.querySelectorAll('.pf-tab').forEach(t=>t.classList.remove('active'));
-      document.querySelectorAll('.pf-panel').forEach(t=>t.classList.remove('show'));
-      tab.classList.add('active');
-      document.getElementById('pf-'+i).classList.add('show');
-    });
-    pfTabs.appendChild(tab);
+    if (!video || !playButton) {
+      return;
+    }
 
-    const panel=document.createElement('div');
-    panel.className='pf-panel'+(i===0?' show':'');
-    panel.id='pf-'+i;
-    panel.innerHTML=`<div class="pf-head"><h2>${p.name}</h2><p>${p.tagline||''}</p></div>
-      <div class="pf-grid">${logoHTML(p)}${colorsHTML(p)}${fontsHTML(p)}</div>`;
-    pfPanels.appendChild(panel);
-  });
-}
+    function togglePlay(event) {
+      event.stopPropagation();
 
-// ===== verktyg (only on om page) =====
-const toolsWrap=document.getElementById('toolsWrap');
-if(toolsWrap && window.TOOLS){
-  window.TOOLS.forEach(group=>{
-    const tg=document.createElement('div');
-    tg.className='tg reveal';
-    tg.innerHTML=`<h3>${group.group}</h3><div class="chips"></div>`;
-    const chipsWrap=tg.querySelector('.chips');
-    group.items.forEach(it=>{
-      const chip=document.createElement('span');
-      chip.className='chip';
-      chip.dataset.name=it.name;
-      // alltid synlig grund: initial-cirkel
-      const initial=it.name.replace(/[^A-Za-zÅÄÖåäö0-9]/g,'').charAt(0).toUpperCase();
-      chip.innerHTML=`<span class="ini">${initial}</span>`;
-      // försök lägga riktig logga ovanpå
-      if(it.icon){
-        const img=new Image();
-        img.src=`https://cdn.simpleicons.org/${it.icon}`;
-        img.alt=it.name;
-        img.onload=()=>{ chip.innerHTML=''; chip.appendChild(img); chip.classList.add('has-logo'); };
-        // misslyckas → behåll initialen (gör inget)
+      if (video.paused) {
+        video.play();
+        container.classList.add('playing');
+      } else {
+        video.pause();
+        container.classList.remove('playing');
       }
-      chipsWrap.appendChild(chip);
+    }
+
+    playButton.addEventListener('click', togglePlay);
+    video.addEventListener('click', togglePlay);
+
+    video.addEventListener('ended', function () {
+      container.classList.remove('playing');
     });
-    toolsWrap.appendChild(tg);
+  }
+
+  document.querySelectorAll('[data-video]').forEach(initVideo);
+
+
+  /* --- Filter: sammanhang (data-s) och plattform (data-p) --- */
+
+  const allCards = document.querySelectorAll('.mock');
+  let activeSource = 'alla';
+  let activePlatform = 'alla';
+
+  function applyFilters() {
+    allCards.forEach(function (card) {
+      const matchesSource = activeSource === 'alla' || card.dataset.s === activeSource;
+      const matchesPlatform = activePlatform === 'alla' || card.dataset.p === activePlatform;
+      const isVisible = matchesSource && matchesPlatform;
+
+      card.classList.toggle('hide', !isVisible);
+    });
+  }
+
+  // Sammanhangsknappar
+  const sourceButtons = document.querySelectorAll('.filter[data-s]');
+
+  sourceButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      sourceButtons.forEach(function (other) {
+        other.classList.remove('active');
+      });
+
+      button.classList.add('active');
+      activeSource = button.dataset.s;
+      applyFilters();
+    });
   });
-  document.querySelectorAll('#toolsWrap .reveal').forEach(el=>{
-    new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.12}).observe(el);
+
+  // Plattformsknappar
+  const platformButtons = document.querySelectorAll('.filter[data-p]');
+
+  platformButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      platformButtons.forEach(function (other) {
+        other.classList.remove('active');
+      });
+
+      button.classList.add('active');
+      activePlatform = button.dataset.p;
+      applyFilters();
+    });
   });
+
+
+  /* --- Fade-in för de nyss skapade korten --- */
+
+  revealOnScroll(document.querySelectorAll('#showGrid .reveal'));
+
+
+  /* --- Lightbox: öppna förstorat vid klick på ett kort --- */
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxInner = document.getElementById('lbInner');
+  const lightboxClose = document.getElementById('lbClose');
+
+  // Koppla bara lightbox om alla dess element finns i HTML:en
+  if (lightbox && lightboxInner && lightboxClose) {
+
+    function openLightbox(card) {
+      const media = card.querySelector('.carousel, .media-video, .media-single');
+
+      lightboxInner.innerHTML = media.outerHTML;
+      lightbox.classList.add('open');
+
+      // Återinitiera interaktivitet i den kopierade kopian
+      const carouselCopy = lightboxInner.querySelector('[data-carousel]');
+      if (carouselCopy) {
+        initCarousel(carouselCopy);
+      }
+
+      const videoCopy = lightboxInner.querySelector('[data-video]');
+      if (videoCopy) {
+        initVideo(videoCopy);
+      }
+    }
+
+    document.querySelectorAll('.mock').forEach(function (card) {
+      card.addEventListener('click', function (event) {
+        // Klick på pilar, prickar, play-knapp eller video ska inte öppna lightboxen
+        const clickedControl =
+          event.target.closest('.nav') ||
+          event.target.closest('.cdots') ||
+          event.target.closest('.play-btn') ||
+          event.target.closest('video');
+
+        if (clickedControl) {
+          return;
+        }
+
+        openLightbox(card);
+      });
+    });
+
+    lightboxClose.addEventListener('click', function () {
+      lightbox.classList.remove('open');
+    });
+
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) {
+        lightbox.classList.remove('open');
+      }
+    });
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   4. Grafisk profil – byggs bara om sidan har #pfTabs
+   --------------------------------------------------------------------- */
+const profileTabs = document.getElementById('pfTabs');
+
+if (profileTabs && window.PROFILES) {
+  const profilePanels = document.getElementById('pfPanels');
+
+  function buildLogoHTML(profile) {
+    let inner;
+
+    if (profile.logo.type === 'img') {
+      inner = `<img src="${profile.logo.src}" alt="${profile.name} logotyp">`;
+    } else {
+      const color = profile.logo.color || '#fff';
+      inner = `<span class="txt" style="color:${color}">${profile.logo.text}</span>`;
+    }
+
+    const background = profile.bg || '#222';
+    return `<div class="pf-logo" style="background:${background}">${inner}</div>`;
+  }
+
+  function buildColorsHTML(profile) {
+    const swatches = profile.colors.map(function (color) {
+      return `
+        <div class="pf-sw">
+          <div class="chip" style="background:${color.hex}"></div>
+          <div class="hex">${color.hex}</div>
+          <div class="nm">${color.name || ''}</div>
+        </div>`;
+    }).join('');
+
+    return `
+      <div class="pf-card">
+        <div class="lbl">Färgpalett</div>
+        <div class="pf-swatches">${swatches}</div>
+      </div>`;
+  }
+
+  function buildFontsHTML(profile) {
+    const fonts = profile.fonts.map(function (font, index) {
+      const styles = [];
+
+      if (font.css) {
+        styles.push('font-family:' + font.css);
+      }
+      if (font.italic) {
+        styles.push('font-style:italic');
+      }
+      if (font.weight) {
+        styles.push('font-weight:' + font.weight);
+      }
+
+      const extraClass = index > 0 ? 'sans' : '';
+
+      return `
+        <div class="pf-font ${extraClass}">
+          <div class="role">${font.name} · ${font.role}</div>
+          <div class="sample" style="${styles.join(';')}">${font.sample}</div>
+        </div>`;
+    }).join('');
+
+    return `
+      <div class="pf-card">
+        <div class="lbl">Typografi</div>
+        ${fonts}
+      </div>`;
+  }
+
+  function buildProfileTab(profile, index) {
+    const tab = document.createElement('button');
+
+    tab.className = 'pf-tab' + (index === 0 ? ' active' : '');
+    tab.textContent = profile.name;
+
+    tab.addEventListener('click', function () {
+      document.querySelectorAll('.pf-tab').forEach(function (other) {
+        other.classList.remove('active');
+      });
+      document.querySelectorAll('.pf-panel').forEach(function (panel) {
+        panel.classList.remove('show');
+      });
+
+      tab.classList.add('active');
+      document.getElementById('pf-' + index).classList.add('show');
+    });
+
+    return tab;
+  }
+
+  function buildProfilePanel(profile, index) {
+    const panel = document.createElement('div');
+
+    panel.className = 'pf-panel' + (index === 0 ? ' show' : '');
+    panel.id = 'pf-' + index;
+
+    panel.innerHTML = `
+      <div class="pf-head">
+        <h2>${profile.name}</h2>
+        <p>${profile.tagline || ''}</p>
+      </div>
+      <div class="pf-grid">
+        ${buildLogoHTML(profile)}
+        ${buildColorsHTML(profile)}
+        ${buildFontsHTML(profile)}
+      </div>`;
+
+    return panel;
+  }
+
+  window.PROFILES.forEach(function (profile, index) {
+    const tab = buildProfileTab(profile, index);
+    profileTabs.appendChild(tab);
+
+    const panel = buildProfilePanel(profile, index);
+    profilePanels.appendChild(panel);
+  });
+}
+
+
+/* ---------------------------------------------------------------------
+   5. Verktyg – byggs bara om sidan har #toolsWrap
+   --------------------------------------------------------------------- */
+const toolsWrapper = document.getElementById('toolsWrap');
+
+if (toolsWrapper && window.TOOLS) {
+
+  // Plocka ut första bokstaven till bokstavscirkeln
+  function getInitial(name) {
+    const cleaned = name.replace(/[^A-Za-zÅÄÖåäö0-9]/g, '');
+    return cleaned.charAt(0).toUpperCase();
+  }
+
+  // Bygg ett enskilt verktygs-chip (bokstavscirkel + ev. riktig logga)
+  function buildToolChip(tool) {
+    const chip = document.createElement('span');
+
+    chip.className = 'chip';
+    chip.dataset.name = tool.name;
+
+    // Bokstavscirkel som alltid syns
+    const initial = getInitial(tool.name);
+    chip.innerHTML = `<span class="ini">${initial}</span>`;
+
+    // Försök ladda en riktig logga ovanpå
+    if (tool.icon) {
+      const logo = new Image();
+      logo.src = `https://cdn.simpleicons.org/${tool.icon}`;
+      logo.alt = tool.name;
+
+      logo.onload = function () {
+        chip.innerHTML = '';
+        chip.appendChild(logo);
+        chip.classList.add('has-logo');
+      };
+      // Om loggan inte laddas behålls bokstavscirkeln
+    }
+
+    return chip;
+  }
+
+  // Bygg en hel verktygsgrupp (rubrik + chips)
+  function buildToolGroup(group) {
+    const wrapper = document.createElement('div');
+
+    wrapper.className = 'tg reveal';
+    wrapper.innerHTML = `<h3>${group.group}</h3><div class="chips"></div>`;
+
+    const chipsWrapper = wrapper.querySelector('.chips');
+
+    group.items.forEach(function (tool) {
+      const chip = buildToolChip(tool);
+      chipsWrapper.appendChild(chip);
+    });
+
+    return wrapper;
+  }
+
+  window.TOOLS.forEach(function (group) {
+    const groupElement = buildToolGroup(group);
+    toolsWrapper.appendChild(groupElement);
+  });
+
+  // Fade-in för de nya grupperna
+  revealOnScroll(document.querySelectorAll('#toolsWrap .reveal'));
 }

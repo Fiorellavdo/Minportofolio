@@ -572,10 +572,6 @@ footer a {
   font-weight:600;
 }
 .show-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
-  gap:24px;
-  align-items:start;
   padding:40px 0 20px;
 }
 .mock {
@@ -586,7 +582,7 @@ footer a {
   transform:translateY(-6px);
 }
 .mock.hide {
-  display:none;
+  display:none !important;
 }
 .mlabel {
   font-size:.72rem;
@@ -779,8 +775,21 @@ footer a {
   display:flex;
 }
 .lb-inner {
-  max-width:380px;
+  max-width:min(720px,92vw);
   width:100%;
+  max-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.lb-inner img,
+.lb-inner video {
+  max-width:100%;
+  max-height:90vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:16px;
 }
 .lb-close {
   position:absolute;
@@ -968,9 +977,15 @@ textarea {
   background:#c98a3c;
 }
 /* karusellkortet får vara bredare i griden */
-/* karusell i lightbox – större */
+/* karusell i lightbox */
 .lightbox .carousel {
-  max-width:380px;
+  max-width:min(720px,92vw);
+  width:100%;
+}
+.lightbox .carousel .track img,
+.lightbox .carousel .track video {
+  max-height:90vh;
+  object-fit:contain;
 }
 .lb-inner .mclient,.lb-inner .mlabel {
   display:none;
@@ -1265,10 +1280,13 @@ textarea {
   opacity:0;
   pointer-events:none;
 }
-/* lightbox: naturlig form */
+/* lightbox: naturlig form, ryms på skärmen */
 .lightbox .media-video {
-  max-width:340px;
+  max-width:min(560px,92vw);
+  max-height:90vh;
 }
 .lightbox .media-single img {
   border-radius:16px;
+  max-height:90vh;
+  width:auto;
 }

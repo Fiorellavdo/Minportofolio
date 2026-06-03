@@ -650,7 +650,7 @@ window.CAROUSELS = [
     client: "Utbildning",
     label: "Mood Board",
     images: [
-      "Media/Utbilning/Blue Aesthetic Mood Board Brand Inspiration Poster.png"
+      "Media/Utbilning/Mood-board.png"
     ]
   },
   {
