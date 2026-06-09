@@ -16,17 +16,27 @@ window.TOOLS = [
       { name: "Facebook", icon: "facebook" },
       { name: "LinkedIn", icon: "linkedin" },
       { name: "YouTube", icon: "youtube" },
+      { name: "Snapchat", icon: "snapchat" },
+      { name: "Reddit", icon: "reddit" },
+      { name: "Pinterest", icon: "pinterest" },
       { name: "Meta Ads", icon: "meta" },
       { name: "LinkedIn Ads", icon: "linkedin" },
-      { name: "Google Ads", icon: "googleads" }
+      { name: "Google Ads", icon: "googleads" },
+      { name: "Adform (programmatisk)", icon: null }
     ]
   },
   {
     group: "Marknadsföring & analys",
     items: [
       { name: "SEO", icon: null },
+      { name: "AI-sök", icon: null },
       { name: "Content marketing", icon: null },
       { name: "Paid social", icon: null },
+      { name: "Performance marketing", icon: null },
+      { name: "Programmatisk annonsering", icon: null },
+      { name: "Medieplanering", icon: null },
+      { name: "A/B-testning", icon: null },
+      { name: "KPI & optimering", icon: null },
       { name: "GA4", icon: "googleanalytics" },
       { name: "Looker Studio", icon: "looker" },
       { name: "Power BI", icon: null },
@@ -67,6 +77,7 @@ window.TOOLS = [
       { name: "HTML/CSS", icon: "html5" },
       { name: "JavaScript", icon: "javascript" },
       { name: "React", icon: "react" },
+      { name: "React Native", icon: "react" },
       { name: "TypeScript", icon: "typescript" },
       { name: "Node.js", icon: "nodedotjs" },
       { name: "MongoDB", icon: "mongodb" },

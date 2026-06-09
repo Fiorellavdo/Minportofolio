@@ -1290,3 +1290,45 @@ textarea {
   max-height:90vh;
   width:auto;
 }
+
+/* ===================== SÅ JOBBAR JAG (process) ===================== */
+.process {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+  counter-reset:step;
+}
+@media(max-width:760px){
+  .process {
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+}
+@media(max-width:480px){
+  .process {
+    grid-template-columns:1fr;
+  }
+}
+.process .step {
+  background:var(--card);
+  border:1px solid color-mix(in srgb,var(--brown) 8%,transparent);
+  border-radius:var(--radius);
+  padding:26px 22px;
+  box-shadow:var(--shadow-sm);
+}
+.process .step .num {
+  font-family:'Fraunces',serif;
+  font-size:1.4rem;
+  color:var(--green);
+  margin-bottom:12px;
+}
+.process .step h4 {
+  font-family:'Inter';
+  font-weight:600;
+  font-size:1rem;
+  margin-bottom:8px;
+}
+.process .step p {
+  color:var(--muted);
+  font-size:.9rem;
+}
