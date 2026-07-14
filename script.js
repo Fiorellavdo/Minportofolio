@@ -461,6 +461,17 @@ if (showSections) {
       const videoCopy = lightboxInner.querySelector('[data-video]');
       if (videoCopy) {
         initVideo(videoCopy);
+        
+        // Auto-play video när lightbox öppnas
+        const videoElement = videoCopy.querySelector('video');
+        if (videoElement) {
+          // Sätt autoplay och spela upp
+          videoElement.autoplay = true;
+          videoElement.play().catch(function(error) {
+            console.log('Auto-play failed:', error);
+          });
+          videoCopy.classList.add('playing');
+        }
       }
     }
 
