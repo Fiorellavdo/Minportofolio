@@ -74,11 +74,12 @@ if (burgerButton) {
 
 
 /* ---------------------------------------------------------------------
-   3. Showroom – byggs bara om sidan har rutnätet #showGrid
+   3. Showroom – byggs bara om sidan har containern #showSections
    --------------------------------------------------------------------- */
-const showGrid = document.getElementById('showGrid');
+const showSections = document.getElementById('showSections');
+const quickNav = document.getElementById('quickNav');
 
-if (showGrid) {
+if (showSections) {
 
   /* --- Små hjälpfunktioner --- */
 
@@ -87,43 +88,35 @@ if (showGrid) {
     return /\.(mp4|webm|mov)$/i.test(path);
   }
 
-  // Normalisera plattformsnamn så filtret matchar oavsett stavning
-  function normalizePlatform(platform) {
-    const value = (platform || '').toLowerCase();
-
-    if (value.includes('linkedin')) {
-      return 'linkedin';
-    }
-    if (value.includes('meta')) {
-      return 'meta';
-    }
-    return 'ovrigt';
-  }
-
 
   /* --- Bygg HTML för olika medietyper --- */
 
-  function buildVideoHTML(path) {
+  function buildVideoHTML(path, eager) {
+    const preload = eager ? 'auto' : 'metadata';
+
     return `
       <div class="media-video" data-video>
-        <video src="${path}" preload="metadata" playsinline></video>
+        <video src="${path}" preload="${preload}" playsinline></video>
         <button class="play-btn" aria-label="Spela">▶</button>
       </div>`;
   }
 
-  function buildSingleImageHTML(path, label) {
+  function buildSingleImageHTML(path, label, eager) {
+    const loadingMode = eager ? 'eager' : 'lazy';
+    const priority = eager ? 'high' : 'auto';
+
     return `
       <div class="media-single">
-        <img src="${path}" alt="${label || ''}" loading="lazy">
+        <img src="${path}" alt="${label || ''}" loading="${loadingMode}" decoding="async" fetchpriority="${priority}">
       </div>`;
   }
 
-  function buildCarouselHTML(images) {
+  function buildCarouselHTML(images, eager) {
     const slides = images.map(function (path, index) {
       if (isVideoFile(path)) {
-        return `<video src="${path}" preload="metadata" playsinline></video>`;
+        return `<video src="${path}" preload="${eager ? 'auto' : 'metadata'}" playsinline></video>`;
       }
-      return `<img src="${path}" alt="Slide ${index + 1}" loading="lazy">`;
+      return `<img src="${path}" alt="Slide ${index + 1}" loading="${eager ? 'eager' : 'lazy'}" decoding="async" fetchpriority="${eager ? 'high' : 'auto'}">`;
     }).join('');
 
     return `
@@ -136,17 +129,17 @@ if (showGrid) {
   }
 
   // Välj rätt media-HTML utifrån antal filer och typ
-  function buildMediaHTML(item) {
+  function buildMediaHTML(item, eager) {
     const images = item.images;
     const isSingleFile = images.length === 1;
 
     if (isSingleFile && isVideoFile(images[0])) {
-      return buildVideoHTML(images[0]);
+      return buildVideoHTML(images[0], eager);
     }
     if (isSingleFile) {
-      return buildSingleImageHTML(images[0], item.label);
+      return buildSingleImageHTML(images[0], item.label, eager);
     }
-    return buildCarouselHTML(images);
+    return buildCarouselHTML(images, eager);
   }
 
 
@@ -159,9 +152,6 @@ if (showGrid) {
     const isVideo = item.images.length === 1 && isVideoFile(item.images[0]);
 
     const classNames = ['mock', 'reveal'];
-    if (item.wide) {
-      classNames.push('wide');
-    }
     if (isCarousel) {
       classNames.push('is-carousel');
     }
@@ -170,26 +160,124 @@ if (showGrid) {
     }
 
     card.className = classNames.join(' ');
-    card.dataset.s = item.src;
-    card.dataset.p = normalizePlatform(item.platform);
     card.style.margin = '0';
 
-    const media = buildMediaHTML(item);
     const caption = `
       <div class="mclient">${item.client}</div>
       <div class="mlabel">${item.label}</div>`;
 
-    card.innerHTML = media + caption;
+    const mediaHTML = `<div class="mock-media">${buildMediaHTML(item, true)}</div>`;
+    card.innerHTML = mediaHTML + caption;
+
+    card.addEventListener('click', function (event) {
+      const clickedControl =
+        event.target.closest('.nav') ||
+        event.target.closest('.cdots') ||
+        event.target.closest('.play-btn') ||
+        event.target.closest('video');
+
+      if (clickedControl) {
+        return;
+      }
+
+      openLightbox(card);
+    });
+
     return card;
   }
 
-  // Bygg alla kort från datafilen
-  if (window.CAROUSELS) {
-    window.CAROUSELS.forEach(function (item) {
-      const card = buildCard(item);
-      showGrid.appendChild(card);
+
+  /* --- Bygg en hel kategori-sektion (rubrik + eget rutnät) --- */
+
+  function buildCategorySection(category, items) {
+    const section = document.createElement('section');
+    section.className = 'cat-section';
+    section.id = 'cat-' + category.key;
+
+    const head = document.createElement('div');
+    head.className = 'cat-head reveal';
+    head.innerHTML = `
+      <h2 class="cat-title">${category.label}</h2>
+      <span class="cat-count">${items.length} st</span>`;
+
+    const grid = document.createElement('div');
+    grid.className = 'show-grid';
+
+    items.forEach(function (item) {
+      grid.appendChild(buildCard(item));
+    });
+
+    section.appendChild(head);
+    section.appendChild(grid);
+    return section;
+  }
+
+  // Bygg en sektion per kategori (i den ordning CATEGORIES anger),
+  // och hoppa över kategorier som inte har något innehåll än.
+  // Ingen kategori visas innan användaren väljer en.
+  if (window.CAROUSELS && window.CATEGORIES) {
+    const requestedKey = (window.location.hash || '').replace('#cat-', '');
+    let selectedSection = null;
+    let selectedTab = null;
+
+    const placeholder = document.createElement('div');
+    placeholder.className = 'cat-placeholder reveal';
+    placeholder.innerHTML = `
+      <div class="placeholder-box">
+        <div class="placeholder-icon">≡</div>
+        <h2>Välj en kategori ovan</h2>
+        <p>Klicka på knapparna för att visa projekten i respektive kategori.</p>
+      </div>`;
+    showSections.appendChild(placeholder);
+
+    function activateCategory(section, tab) {
+      placeholder.style.display = 'none';
+      document.querySelectorAll('#quickNav .filter').forEach(function (other) {
+        other.classList.remove('active');
+      });
+      document.querySelectorAll('.cat-section').forEach(function (other) {
+        other.classList.remove('show');
+      });
+
+      if (section && tab) {
+        tab.classList.add('active');
+        section.classList.add('show');
+        selectedSection = section;
+        selectedTab = tab;
+      }
+    }
+
+    window.CATEGORIES.forEach(function (category) {
+      const items = window.CAROUSELS.filter(function (item) {
+        return item.src === category.key;
+      });
+
+      if (items.length === 0) {
+        return;
+      }
+
+      const section = buildCategorySection(category, items);
+      showSections.appendChild(section);
+
+      if (quickNav) {
+        const tab = document.createElement('button');
+        tab.type = 'button';
+        tab.className = 'filter';
+        tab.innerHTML = `<span>${category.label}</span><span class="filter-count">${items.length}</span>`;
+
+        tab.addEventListener('click', function () {
+          activateCategory(section, tab);
+        });
+
+        quickNav.appendChild(tab);
+      }
+
+      if (requestedKey && category.key === requestedKey) {
+        activateCategory(section, quickNav.querySelector('.filter:last-child'));
+      }
     });
   }
+
 
 
   /* --- Gör en karusell interaktiv (pilar, prickar, swipe) --- */
@@ -306,56 +394,9 @@ if (showGrid) {
   document.querySelectorAll('[data-video]').forEach(initVideo);
 
 
-  /* --- Filter: sammanhang (data-s) och plattform (data-p) --- */
-
-  const allCards = document.querySelectorAll('.mock');
-  let activeSource = 'alla';
-  let activePlatform = 'alla';
-
-  function applyFilters() {
-    allCards.forEach(function (card) {
-      const matchesSource = activeSource === 'alla' || card.dataset.s === activeSource;
-      const matchesPlatform = activePlatform === 'alla' || card.dataset.p === activePlatform;
-      const isVisible = matchesSource && matchesPlatform;
-
-      card.classList.toggle('hide', !isVisible);
-    });
-  }
-
-  // Sammanhangsknappar
-  const sourceButtons = document.querySelectorAll('.filter[data-s]');
-
-  sourceButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      sourceButtons.forEach(function (other) {
-        other.classList.remove('active');
-      });
-
-      button.classList.add('active');
-      activeSource = button.dataset.s;
-      applyFilters();
-    });
-  });
-
-  // Plattformsknappar
-  const platformButtons = document.querySelectorAll('.filter[data-p]');
-
-  platformButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      platformButtons.forEach(function (other) {
-        other.classList.remove('active');
-      });
-
-      button.classList.add('active');
-      activePlatform = button.dataset.p;
-      applyFilters();
-    });
-  });
-
-
   /* --- Fade-in för de nyss skapade korten --- */
 
-  revealOnScroll(document.querySelectorAll('#showGrid .reveal'));
+  revealOnScroll(document.querySelectorAll('#showSections .reveal'));
 
 
   /* --- Lightbox: öppna förstorat vid klick på ett kort --- */
@@ -555,22 +596,26 @@ if (toolsWrapper && window.TOOLS) {
     chip.className = 'chip';
     chip.dataset.name = tool.name;
 
-    // Bokstavscirkel som alltid syns
+    // Visa alltid en stabil bokstavscirkel som fallback.
     const initial = getInitial(tool.name);
     chip.innerHTML = `<span class="ini">${initial}</span>`;
 
-    // Försök ladda en riktig logga ovanpå
     if (tool.icon) {
-      const logo = new Image();
-      logo.src = `https://cdn.simpleicons.org/${tool.icon}`;
-      logo.alt = tool.name;
+      const logo = document.createElement('img');
+      logo.className = 'logo';
+      logo.src = `https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/${tool.icon}.svg`;
+      logo.alt = '';
+      logo.loading = 'lazy';
 
-      logo.onload = function () {
-        chip.innerHTML = '';
-        chip.appendChild(logo);
+      logo.onload = () => {
         chip.classList.add('has-logo');
       };
-      // Om loggan inte laddas behålls bokstavscirkeln
+
+      logo.onerror = () => {
+        logo.remove();
+      };
+
+      chip.appendChild(logo);
     }
 
     return chip;

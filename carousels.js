@@ -1,4 +1,19 @@
 /* =====================================================================
+   KATEGORIER FÖR SHOWROOM
+   ---------------------------------------------------------------------
+   Bestämmer vilken ordning kategorierna visas i och vilken rubrik/
+   etikett varje kategori får. Nyckeln måste matcha "src" nedan.
+   ===================================================================== */
+window.CATEGORIES = [
+  { key: "vai", label: "VAI · kunder" },
+  { key: "vaiegna", label: "VAI · egna kanaler" },
+  { key: "evity", label: "Evity" },
+  { key: "silva", label: "Primus-Silva" },
+  { key: "utbildning", label: "Utbildning" },
+  { key: "fritid", label: "Fritid" }
+];
+
+/* =====================================================================
    DINA KARUSELLER / SHOWROOM-CONTENT
    ---------------------------------------------------------------------
    Varje objekt:
@@ -199,6 +214,19 @@ window.CAROUSELS = [
       "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 4.png"
     ]
   },
+
+   {
+    src: "vai",
+    platform: "meta",
+    client: "VAI · kunder",
+    label: "Trafik · Carlssons Mattservice",
+    images: [
+      "media/Vai kunder/1.png",
+      "media/Vai kunder/2.png",
+      "media/Vai kunder/3.png"
+    ]
+  },
+
   {
     src: "vai",
     platform: "meta",
@@ -577,6 +605,20 @@ window.CAROUSELS = [
     label: "IKEA POPUP",
     images: [
       "Media/Fritid/KOrv med bröd.png"
+    ]
+  },
+
+   {
+    src: "fritid",
+    platform: "meta",
+    client: "Fritid",
+    label: "Arbetsprov",
+    images: [
+      "Media/Fritid/1.png",
+      "Media/Fritid/2.png",
+      "Media/Fritid/3.png",
+      "Media/Fritid/4.png",
+      "Media/Fritid/5.png"
     ]
   },
 

@@ -348,6 +348,58 @@ footer a {
     gap:36px;
   }
 }
+.hero-work {
+  position:absolute;
+  top:130px;
+  right:0;
+  width:210px;
+  display:block;
+  text-decoration:none;
+  opacity:0;
+  transform:rotate(8deg) translateY(16px);
+  animation:heroWorkIn 1s cubic-bezier(.16,1,.3,1) .5s forwards;
+}
+.hero-work:hover {
+  transform:rotate(0deg) translateY(-6px) !important;
+  transition:transform .35s cubic-bezier(.16,1,.3,1);
+}
+@keyframes heroWorkIn {
+  to {
+    opacity:1;
+    transform:rotate(4deg) translateY(0);
+  }
+}
+.hero-work img {
+  width:100%;
+  display:block;
+  border-radius:18px;
+  box-shadow:var(--shadow);
+}
+.hero-work-tag {
+  position:absolute;
+  left:14px;
+  bottom:14px;
+  background:var(--foam);
+  color:var(--ink);
+  font-size:.68rem;
+  font-weight:600;
+  padding:6px 12px;
+  border-radius:20px;
+  box-shadow:var(--shadow-sm);
+}
+@media(max-width:1000px) {
+  .hero-work {
+    width:170px;
+    top:100px;
+  }
+}
+@media(max-width:760px) {
+  .hero-work {
+    position:static;
+    width:180px;
+    margin:32px 0 0;
+  }
+}
 /* ===================== OM MIG (om) ===================== */
 .intro-row {
   display:grid;
@@ -513,6 +565,9 @@ footer a {
   align-items:center;
   justify-content:center;
 }
+.chip.has-logo .ini {
+  display:none;
+}
 .chip.has-logo {
   background:var(--card);
 }
@@ -563,6 +618,24 @@ footer a {
   color:#fff;
   border-color:var(--brown);
 }
+.filter {
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+}
+.filter-count {
+  background:color-mix(in srgb,var(--brown) 12%,transparent);
+  color:var(--brown);
+  font-size:.78rem;
+  font-weight:600;
+  padding:.4rem .8rem;
+  border-radius:999px;
+}
+.filter.active .filter-count,
+.filter:hover .filter-count {
+  background:rgba(255,255,255,.18);
+  color:#fff;
+}
 .filter-label {
   font-size:.72rem;
   letter-spacing:.16em;
@@ -571,18 +644,99 @@ footer a {
   margin:26px 0 12px;
   font-weight:600;
 }
-.show-grid {
-  padding:40px 0 20px;
+.cat-section {
+  display:none;
+}
+.cat-section.show {
+  display:block;
+  padding-top:10px;
+}
+.cat-placeholder {
+  border:1px dashed color-mix(in srgb,var(--brown) 22%,transparent);
+  border-radius:28px;
+  padding:64px 32px;
+  margin-top:28px;
+  background:var(--card);
+  text-align:center;
+}
+.cat-placeholder .placeholder-box {
+  max-width:620px;
+  margin:0 auto;
+}
+.cat-placeholder .placeholder-icon {
+  width:56px;
+  height:56px;
+  margin:0 auto 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:var(--foam);
+  color:var(--green);
+  font-size:1.35rem;
+  box-shadow:var(--shadow-sm);
+}
+.cat-placeholder h2 {
+  margin:0 0 12px;
+}
+.cat-placeholder p {
+  color:var(--muted);
+  max-width:46ch;
+  margin:0 auto;
+  line-height:1.8;
+}
+.cat-head {
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  margin-bottom:20px;
+  border-bottom:1px solid color-mix(in srgb,var(--brown) 14%,transparent);
+  padding-bottom:14px;
+}
+.cat-title {
+  font-size:clamp(1.2rem,2.2vw,1.6rem);
+}
+.cat-count {
+  font-size:.78rem;
+  color:var(--muted);
+  font-weight:500;
 }
 .mock {
   cursor:pointer;
   transition:transform .3s;
+  background:var(--card);
+  border-radius:18px;
+  padding:14px;
+  border:1px solid color-mix(in srgb,var(--brown) 8%,transparent);
 }
 .mock:hover {
   transform:translateY(-6px);
 }
-.mock.hide {
-  display:none !important;
+.mock.is-loaded {
+  cursor:default;
+}
+.mock.is-loaded:hover {
+  transform:none;
+}
+.mock-placeholder {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:180px;
+  border:1px dashed color-mix(in srgb,var(--brown) 22%,transparent);
+  border-radius:16px;
+  background:color-mix(in srgb,var(--foam) 75%,transparent);
+  color:var(--muted);
+  font-size:.76rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+  text-align:center;
+  padding:16px;
+}
+.mock-media {
+  margin-bottom:12px;
 }
 .mlabel {
   font-size:.72rem;
@@ -1135,13 +1289,6 @@ textarea {
   font-weight:500;
   font-size:1.15rem;
 }
-/* liggande case spänner över hela gridbredden */
-.show-grid .mock.wide {
-  grid-column:1 / -1;
-}
-.show-grid .mock.wide .carousel .track img {
-  width:100%;
-}
 /* ===================== EXTRA MOBIL-FINJUSTERING (smala skärmar) ===================== */
 @media(max-width:480px) {
   .contact-wrap {
@@ -1157,10 +1304,6 @@ textarea {
   }
   .logo {
     font-size:.98rem;
-  }
-  .show-grid {
-    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
-    gap:16px;
   }
   .pf-tabs {
     gap:8px;
@@ -1199,6 +1342,7 @@ textarea {
   display:block;
   column-count:4;
   column-gap:22px;
+  padding:40px 0 20px;
 }
 .show-grid .mock {
   break-inside:avoid;
