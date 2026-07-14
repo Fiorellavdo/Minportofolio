@@ -1420,6 +1420,27 @@ textarea {
   transform:translate(-50%,-50%) scale(1.08);
   background:#fff;
 }
+.media-video .mute-btn {
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,.85);
+  color:#2a1633;
+  font-size:1.1rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .2s,background .2s,opacity .2s;
+}
+.media-video .mute-btn:hover {
+  transform:scale(1.05);
+  background:#fff;
+}
 .media-video.playing .play-btn {
   opacity:0;
   pointer-events:none;

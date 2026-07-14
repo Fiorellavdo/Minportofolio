@@ -201,12 +201,43 @@ window.CAROUSELS = [
     ]
   },
 
+  {
+    src: "vaiegna",
+    platform: "linkedin",
+    client: "VAI · egna kanaler",
+    label: "Bakom kulisserna",
+    images: [
+     "Media/Vai/Bakomkulisserna.MOV"
+    ]
+  },
+
+{
+    src: "vaiegna",
+    platform: "linkedin",
+    client: "VAI · egna kanaler",
+    label: "Midsommar",
+    images: [
+     "Media/Vai/Midsommar (videoannons).mp4"
+    ]
+  },
+
+  {
+    src: "vaiegna",
+    platform: "linkedin",
+    client: "VAI · egna kanaler",
+    label: "Midsommar",
+    images: [
+     "Media/Vai/Midsommar.png"
+    ]
+  },
+
+
   // ===== VAI – KUNDER =====
   {
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Trafik · Carlssons Mattservice",
+    label: "Carlssons Mattservice",
     images: [
       "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 1.png",
       "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 2.png",
@@ -219,11 +250,11 @@ window.CAROUSELS = [
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Trafik · Carlssons Mattservice",
+    label: "Carlssons Mattservice",
     images: [
-      "media/Vai kunder/1.png",
-      "media/Vai kunder/2.png",
-      "media/Vai kunder/3.png"
+      "Media/Vai kunder/1.png",
+      "Media/Vai kunder/2.png",
+      "Media/Vai kunder/3.png"
     ]
   },
 
@@ -231,7 +262,7 @@ window.CAROUSELS = [
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Försäljning · Fönsterputs",
+    label: "Fönsterputs",
     images: [
       "Media/Vai kunder/Fönsterputs (meta kampanj)  - 2.png",
       "Media/Vai kunder/Fönsterputs (meta kampanj)  - 4.png"
@@ -241,7 +272,7 @@ window.CAROUSELS = [
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Försäljning · Fönsterputs",
+    label: "Fönsterputs",
     images: [
       "Media/Vai kunder/Fönsterputs (meta kampanj)  - 1.png",
       "Media/Vai kunder/Fönsterputs (meta kampanj)  - 3.png"
@@ -251,7 +282,7 @@ window.CAROUSELS = [
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Trafik · B2B",
+    label: "Hotel 1861 · B2B",
     images: [
       "Media/Vai kunder/Företag (hotel1861) - 1.png",
       "Media/Vai kunder/Företag (hotel1861) - 2.png"
@@ -261,7 +292,7 @@ window.CAROUSELS = [
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Försäljning · Gratis samtal",
+    label: "Carlssons Mattservice · Gratis samtal",
     images: [
       "Media/Vai kunder/Gratis samtal (meta kampanj) - Carlssons Mattservice - 4.png"
     ]
@@ -270,7 +301,7 @@ window.CAROUSELS = [
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Försäljning · Gratis samtal",
+    label: "Carlssons Mattservice · Gratis samtal",
     images: [
       "Media/Vai kunder/Gratis samtal (meta kampanj) - Carlssons Mattservice - 2.png"
     ]
@@ -279,29 +310,43 @@ window.CAROUSELS = [
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Trafik · RALLY VM",
+    label: "Hotel 1861 · RALLY VM",
     images: [
       "Media/Vai kunder/Hotel 1861 (RALLY VM) (Instagram-inlägg (45)) - 1.png",
       "Media/Vai kunder/Hotel 1861 (RALLY VM) (Instagram-inlägg (45)) - 2.png"
     ]
   },
+
   {
     src: "vai",
     platform: "meta",
     client: "VAI · kunder",
-    label: "Trafik · Sportlov",
+    label: "Hotel 1861 · Sportlov",
     images: [
       "Media/Vai kunder/Sportlov (hotel1861) (1080 x 1350 px) - 1.png",
       "Media/Vai kunder/Sportlov (hotel1861) (1080 x 1350 px) - 2.png"
     ]
   },
 
+    {
+    src: "vai",
+    platform: "meta",
+    client: "VAI · kunder",
+    label: "Träbyggarna",
+    images: [
+      "Media/Vai kunder/Träbyggarna 1.png",
+      "Media/Vai kunder/Träbyggarna 2.png",
+      "Media/Vai kunder/Träbyggarna 3.png"
+    ]
+  },
+
+
   // ===== EVITY =====
   {
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · ads",
+    label: "Evity · LinkedIn",
     images: [
       "Media/Evity/1.png"
     ]
@@ -310,7 +355,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · ads",
+    label: "Evity · LinkedIn",
     images: [
       "Media/Evity/2.png"
     ]
@@ -319,7 +364,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · ads",
+    label: "Evity · LinkedIn",
     images: [
       "Media/Evity/3.png"
     ]
@@ -328,7 +373,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · ads",
+    label: "Evity · LinkedIn",
     images: [
       "Media/Evity/4.png"
     ]
@@ -337,7 +382,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · ads",
+    label: "Evity · LinkedIn",
     images: [
       "Media/Evity/5 (1).png"
     ]
@@ -346,7 +391,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · ads",
+    label: "Evity · LinkedIn",
     images: [
       "Media/Evity/6.png"
     ]
@@ -355,7 +400,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · ads",
+    label: "Evity · LinkedIn",
     images: [
       "Media/Evity/16.png"
     ]
@@ -364,7 +409,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · ads",
+    label: "Evity · LinkedIn",
     images: [
       "Media/Evity/17.png"
     ]
@@ -373,7 +418,7 @@ window.CAROUSELS = [
     src: "evity",
     platform: "linkedin",
     client: "Evity",
-    label: "LinkedIn · ads",
+    label: "Evity · LinkedIn",
     images: [
       "Media/Evity/18.png"
     ]
@@ -610,7 +655,6 @@ window.CAROUSELS = [
 
    {
     src: "fritid",
-    platform: "meta",
     client: "Fritid",
     label: "Arbetsprov",
     images: [
@@ -619,6 +663,35 @@ window.CAROUSELS = [
       "Media/Fritid/3.png",
       "Media/Fritid/4.png",
       "Media/Fritid/5.png"
+    ]
+  },
+
+  {
+    src: "fritid",
+    client: "Fritid",
+    label: "Tiktok · Privat",
+    images: [
+      "Media/Fritid/Uffe.MP4"
+    ]
+  },
+
+  {
+    src: "fritid",
+    client: "Fritid",
+    label: "Tiktok · Privat",
+    images: [
+      "Media/Fritid/utgång.MP4"
+    ]
+  },
+
+  {
+    src: "fritid",
+    client: "Fritid",
+    label: "Fritid",
+    images: [
+      "Media/Fritid/format.png",
+      "Media/Fritid/exempel.png",
+      "Media/Fritid/exempel 2.png"
     ]
   },
 

@@ -80,7 +80,6 @@ const showSections = document.getElementById('showSections');
 const quickNav = document.getElementById('quickNav');
 
 if (showSections) {
-
   /* --- Små hjälpfunktioner --- */
 
   // Avgör om en fil är en video
@@ -98,6 +97,7 @@ if (showSections) {
       <div class="media-video" data-video>
         <video src="${path}" preload="${preload}" playsinline></video>
         <button class="play-btn" aria-label="Spela">▶</button>
+        <button class="mute-btn" type="button" aria-label="Ljud av">🔇</button>
       </div>`;
   }
 
@@ -174,6 +174,7 @@ if (showSections) {
         event.target.closest('.nav') ||
         event.target.closest('.cdots') ||
         event.target.closest('.play-btn') ||
+        event.target.closest('.mute-btn') ||
         event.target.closest('video');
 
       if (clickedControl) {
@@ -363,24 +364,61 @@ if (showSections) {
 
   /* --- Video: spela/pausa vid klick --- */
 
+  function pauseAllVideos(exceptVideo) {
+    document.querySelectorAll('[data-video] video').forEach(function (otherVideo) {
+      const otherContainer = otherVideo.closest('[data-video]');
+
+      if (otherVideo !== exceptVideo) {
+        otherVideo.pause();
+        if (otherContainer) {
+          otherContainer.classList.remove('playing');
+        }
+      }
+    });
+  }
+
   function initVideo(container) {
     const video = container.querySelector('video');
     const playButton = container.querySelector('.play-btn');
+    const muteButton = container.querySelector('.mute-btn');
 
     if (!video || !playButton) {
       return;
+    }
+
+    video.muted = true;
+
+    function updateMuteButton() {
+      if (!muteButton) {
+        return;
+      }
+      muteButton.textContent = video.muted ? '🔇' : '🔊';
+      muteButton.setAttribute('aria-label', video.muted ? 'Ljud av' : 'Ljud på');
     }
 
     function togglePlay(event) {
       event.stopPropagation();
 
       if (video.paused) {
+        pauseAllVideos(video);
         video.play();
         container.classList.add('playing');
       } else {
         video.pause();
         container.classList.remove('playing');
       }
+    }
+
+    function toggleMute(event) {
+      event.stopPropagation();
+      video.muted = !video.muted;
+      updateMuteButton();
+    }
+
+    updateMuteButton();
+
+    if (muteButton) {
+      muteButton.addEventListener('click', toggleMute);
     }
 
     playButton.addEventListener('click', togglePlay);
