@@ -190,6 +190,9 @@ nav {
 [data-theme="dark"] .chip.has-logo {
   background:#2f2a20;
 }
+[data-theme="dark"] .chip img {
+  filter:invert(1);
+}
 [data-theme="dark"] .pf-tab,[data-theme="dark"] .filter {
   color:#f1ece2;
 }
