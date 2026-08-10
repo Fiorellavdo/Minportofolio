@@ -231,6 +231,20 @@ window.CAROUSELS = [
     ]
   },
 
+  {
+    src: "vaiegna",
+    platform: "linkedin",
+    client: "VAI · egna kanaler",
+    label: "Midsommar",
+    images: [
+     "Media/Vai/1.png",
+      "Media/Vai/2.png",
+      "Media/Vai/3.png",
+      "Media/Vai/4.png",
+      "Media/Vai/5.png"
+    ]
+  },
+
 
   // ===== VAI – KUNDER =====
   {
@@ -252,7 +266,7 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Carlssons Mattservice",
     images: [
-      "Media/Vai kunder/1.png",
+      "Media/Vai kunder/Juni - Kampanjen.png",
       "Media/Vai kunder/2.png",
       "Media/Vai kunder/3.png"
     ]
@@ -339,6 +353,28 @@ window.CAROUSELS = [
       "Media/Vai kunder/Träbyggarna 3.png"
     ]
   },
+
+  {
+    src: "vai",
+    platform: "meta",
+    client: "VAI · kunder",
+    label: "Träbyggarna",
+    images: [
+      "Media/Vai kunder/Höstkmpanj2.png",
+      "Media/Vai kunder/Höstkmpanj.png"
+    ]
+  },
+
+  {
+    src: "vai",
+    platform: "meta",
+    client: "VAI · kunder",
+    label: "Hotel 1861",
+    images: [
+      "Media/Vai kunder/Annons 1 — Akut bostadsnöd.png"
+    ]
+  },
+
 
 
   // ===== EVITY =====
@@ -663,24 +699,6 @@ window.CAROUSELS = [
       "Media/Fritid/3.png",
       "Media/Fritid/4.png",
       "Media/Fritid/5.png"
-    ]
-  },
-
-  {
-    src: "fritid",
-    client: "Fritid",
-    label: "Tiktok · Privat",
-    images: [
-      "Media/Fritid/Uffe.MP4"
-    ]
-  },
-
-  {
-    src: "fritid",
-    client: "Fritid",
-    label: "Tiktok · Privat",
-    images: [
-      "Media/Fritid/utgång.MP4"
     ]
   },
 
