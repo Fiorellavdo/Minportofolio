@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Case: A/B-test på Meta Ads och granskning av spårningen för en anonym tjänsteleverantör.">
+<title>Case A/B-test · Fiorella Proos Di Giulio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Fiorella Proos Di Giulio</a>
+    <div class="nav-links">
+      <a href="index.html">Hem</a>
+      <a href="showroom.html">Showroom</a>
+      <a href="case-1.html" class="current">Case</a>
+      <a href="profil.html">Grafisk profil</a>
+      <a href="kontakt.html">Kontakt</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Växla tema">☾</button>
+    </div>
+    <button class="burger" id="burger" aria-label="Meny">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Hem</a><a href="showroom.html">Showroom</a><a href="case-1.html">Case</a><a href="profil.html">Grafisk profil</a><a href="kontakt.html">Kontakt</a>
+  </div>
+</nav>
+
+<header class="page-top wrap">
+  <div class="filters case-switch reveal">
+    <a class="filter" href="case-1.html">Tre kanaler, en budget</a>
+    <a class="filter" href="case-2.html">B2B-plattform</a>
+    <a class="filter" href="case-3.html">Lokalt tjänsteföretag</a>
+    <a class="filter active" href="case-4.html" aria-current="page">A/B-test på Meta</a>
+  </div>
+  <div class="eyebrow reveal">Case · Meta Ads</div>
+  <h1 class="reveal">Ett A/B-test som visade <em>att måttet var fel.</em></h1>
+  <p class="reveal">En tjänsteleverantör ville få fler kontaktförfrågningar via sin webbplats. Innan jag startade kampanjerna granskade jag spårningen. Det visade sig att det som räknades som leads inte var förfrågningar. Kunden är anonym.</p>
+
+  <dl class="case-meta reveal">
+    <div><dt>Kund</dt><dd>Tjänsteleverantör, anonym</dd></div>
+    <div><dt>Period</dt><dd>Cirka en månad</dd></div>
+    <div><dt>Kanal</dt><dd>Meta, Facebook och Instagram</dd></div>
+    <div><dt>Budget</dt><dd>41,50 kr per dag och kampanj</dd></div>
+  </dl>
+</header>
+
+<!-- NYCKELTAL -->
+<section class="wrap">
+  <div class="kpis">
+    <div class="kpi reveal">
+      <div class="kpi-n">4</div>
+      <div class="kpi-l">riktiga förfrågningar</div>
+      <div class="kpi-s">2 från varje kampanj, för cirka 2&nbsp;206&nbsp;kr totalt</div>
+    </div>
+    <div class="kpi reveal">
+      <div class="kpi-n">550&nbsp;kr</div>
+      <div class="kpi-l">per inskickat formulär</div>
+      <div class="kpi-s">nästan samma i båda kampanjerna</div>
+    </div>
+    <div class="kpi reveal">
+      <div class="kpi-n">86 mot 9</div>
+      <div class="kpi-l">besök på kontaktsidan</div>
+      <div class="kpi-s">kampanj 2 mot kampanj 1</div>
+    </div>
+    <div class="kpi reveal">
+      <div class="kpi-n">55 mot 552&nbsp;kr</div>
+      <div class="kpi-l">gammalt mått mot verklighet</div>
+      <div class="kpi-s">kostnad per lead i Meta jämfört med per skickat formulär</div>
+    </div>
+  </div>
+</section>
+
+<!-- SPÅRNING -->
+<section class="section wrap">
+  <div class="eyebrow reveal">Granskning av spårningen</div>
+  <h2 class="reveal">Först kollade jag vad som mättes.</h2>
+  <p class="case-lead reveal">Innan kampanjerna startade testade jag kontaktformuläret och följde vilka händelser pixeln skickade. Händelsen Lead triggades redan när kontaktsidan öppnades, alltså innan någon hade skrivit något. När formuläret skickades triggades Lead, Köp och SubscribedButtonClick.</p>
+
+  <div class="table-wrap reveal">
+    <table class="data text">
+      <caption>Händelser i pixeln</caption>
+      <thead><tr><th>Händelse</th><th>Triggades när</th><th>Vad den egentligen mätte</th></tr></thead>
+      <tbody>
+        <tr><td>Lead</td><td>kontaktsidan öppnades</td><td>en sidvisning</td></tr>
+        <tr><td>Köp</td><td>formuläret skickades</td><td><b>en riktig förfrågan</b></td></tr>
+        <tr><td>SubscribedButtonClick</td><td>formuläret skickades</td><td>samma sak som Köp</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="case-lead reveal"><b>Slutsats:</b> Lead mätte sidvisningar, inte förfrågningar. Köp triggades bara när formuläret skickades, så det blev mitt mått på en riktig förfrågan.</p>
+</section>
+
+<!-- TESTDESIGN -->
+<section class="section wrap">
+  <div class="eyebrow reveal">Testdesign</div>
+  <h2 class="reveal">Två kampanjer, samma förutsättningar.</h2>
+  <p class="case-lead reveal">Båda kampanjerna hade samma budget, samma målgrupp och Advantage+ placeringar. Det som skilde dem åt var vart annonsen ledde och vad Meta skulle optimera mot.</p>
+
+  <div class="process two">
+    <div class="step reveal">
+      <div class="num">1</div>
+      <h4>Startsidan</h4>
+      <p>Annonsen ledde till startsidan och optimerades mot Lead.</p>
+    </div>
+    <div class="step reveal">
+      <div class="num">2</div>
+      <h4>Kontaktsidan</h4>
+      <p>Annonsen ledde direkt till kontaktsidan och optimerades mot Köp, alltså ett skickat formulär.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTAT -->
+<section class="section wrap">
+  <div class="eyebrow reveal">Resultat</div>
+  <h2 class="reveal">Från klick till förfrågan.</h2>
+
+  <div class="bars reveal" role="table" aria-label="Från klick till förfrågan per kampanj">
+    <div class="bars-legend" aria-hidden="true">
+      <span><i class="sw sw-before"></i>Kampanj 1, startsidan</span>
+      <span><i class="sw sw-after"></i>Kampanj 2, kontaktsidan</span>
+    </div>
+    <div class="bar-row" role="row">
+      <div class="bar-name" role="rowheader">Länkklick</div>
+      <div class="bar-pair" role="cell">
+        <div class="bar before" style="--w:100%" title="Kampanj 1: 140"><span>140</span></div>
+        <div class="bar after" style="--w:75%" title="Kampanj 2: 105"><span>105</span></div>
+      </div>
+    </div>
+    <div class="bar-row" role="row">
+      <div class="bar-name" role="rowheader">Landningssidan visades</div>
+      <div class="bar-pair" role="cell">
+        <div class="bar before" style="--w:25%" title="Kampanj 1: 35"><span>35</span></div>
+        <div class="bar after" style="--w:62.1%" title="Kampanj 2: 87"><span>87</span></div>
+      </div>
+    </div>
+    <div class="bar-row" role="row">
+      <div class="bar-name" role="rowheader">Kontaktsidan öppnad</div>
+      <div class="bar-pair" role="cell">
+        <div class="bar before" style="--w:6.4%" title="Kampanj 1: 9"><span>9</span></div>
+        <div class="bar after" style="--w:61.4%" title="Kampanj 2: 86"><span>86</span></div>
+      </div>
+    </div>
+    <div class="bar-row" role="row">
+      <div class="bar-name" role="rowheader">Formulär skickat</div>
+      <div class="bar-pair" role="cell">
+        <div class="bar before" style="--w:1.4%" title="Kampanj 1: 2"><span>2</span></div>
+        <div class="bar after" style="--w:1.4%" title="Kampanj 2: 2"><span>2</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap reveal">
+    <table class="data">
+      <caption>Alla siffror</caption>
+      <thead><tr><th>Mätvärde</th><th>Kampanj 1, startsidan</th><th>Kampanj 2, kontaktsidan</th></tr></thead>
+      <tbody>
+        <tr><td>Spenderat</td><td>1&nbsp;105&nbsp;kr</td><td>1&nbsp;101&nbsp;kr</td></tr>
+        <tr><td>Visningar</td><td>10&nbsp;373</td><td>12&nbsp;442</td></tr>
+        <tr><td>Länkklick</td><td>140</td><td>105</td></tr>
+        <tr><td>CTR, länkklick</td><td>1,35&nbsp;%</td><td>0,84&nbsp;%</td></tr>
+        <tr><td>Kostnad per länkklick</td><td>7,89&nbsp;kr</td><td>10,48&nbsp;kr</td></tr>
+        <tr><td>Landningssidan visades</td><td>35</td><td>87</td></tr>
+        <tr><td>Kontaktsidan öppnad</td><td>9</td><td>86</td></tr>
+        <tr><td>Formulär skickat</td><td>2</td><td>2</td></tr>
+        <tr><td><b>Kostnad per skickat formulär</b></td><td>cirka 552&nbsp;kr</td><td>cirka 550&nbsp;kr</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ANALYS -->
+<section class="section wrap">
+  <div class="eyebrow reveal">Analys</div>
+  <h2 class="reveal">Vad siffrorna faktiskt säger.</h2>
+  <div class="story">
+    <div class="reveal">
+      <h3 class="case-h3">Lika många förfrågningar</h3>
+      <p>Båda kampanjerna gav två skickade formulär, för cirka 550&nbsp;kr styck. Totalt blev det fyra förfrågningar för cirka 2&nbsp;206&nbsp;kr.</p>
+      <h3 class="case-h3">Mer trafik till rätt sida</h3>
+      <p>Kampanj 2 gav 86 besök på kontaktsidan mot 9, för cirka 13&nbsp;kr per besök mot cirka 123&nbsp;kr. Den var också billigast per visning av landningssidan, 12,65&nbsp;kr mot 31,57&nbsp;kr.</p>
+    </div>
+    <div class="reveal">
+      <h3 class="case-h3">Billiga klick som försvann</h3>
+      <p>Kampanj 1 hade högre CTR och billigare klick. Men bara 35 av 140 klick, 25&nbsp;%, blev en visning av sidan. I kampanj 2 var det 87 av 105, alltså 83&nbsp;%.</p>
+      <h3 class="case-h3">Det gamla måttet hade lurat</h3>
+      <p>Kampanj 1 visade 20 leads för 55&nbsp;kr styck, vilket såg bra ut. Men bara 9 av dem var besök på webbplatsen, resten var leads inne i Meta. Bara 2 blev ett skickat formulär. Utan granskningen hade kampanjen sett nästan tio gånger bättre ut än den var.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LÄRDOMAR -->
+<section class="section wrap">
+  <h2 class="reveal">Det tar jag med mig</h2>
+  <div class="process three">
+    <div class="step reveal">
+      <div class="num">01</div>
+      <h4>Kolla måttet först</h4>
+      <p>Jag kontrollerar alltid vad en konverteringshändelse mäter innan jag optimerar mot den.</p>
+    </div>
+    <div class="step reveal">
+      <div class="num">02</div>
+      <h4>Ändra en sak i taget</h4>
+      <p>Här skilde sig både mål och destination. Ett helt rent test ändrar bara en sak, så att man vet vad som gjorde skillnaden.</p>
+    </div>
+    <div class="step reveal">
+      <div class="num">03</div>
+      <h4>Mer data innan vinnare</h4>
+      <p>Två resultat per kampanj räcker inte för att utse en vinnare. Nästa steg är längre tid, större budget och en händelse som bara triggas när formuläret skickas.</p>
+    </div>
+  </div>
+  <div class="cta-row reveal" style="margin-top:36px">
+    <a class="btn btn-primary" href="case-3.html">Se förra caset</a>
+    <a class="btn btn-ghost" href="case-1.html">Till första caset</a>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Stäng">×</button>
+  <div class="lb-inner" id="lbInner"></div>
+</div>
+
+<footer>
+  © 2026 Fiorella Proos Di Giulio · Falun · <a href="kontakt.html">Hör av dig →</a>
+</footer>
+<script src="script.js"></script>
+<script>
+  // Förstora bilder vid klick
+  (function () {
+    var lb = document.getElementById('lightbox');
+    var inner = document.getElementById('lbInner');
+    document.querySelectorAll('.shot img').forEach(function (img) {
+      img.addEventListener('click', function () {
+        inner.innerHTML = '<img src="' + img.getAttribute('src') + '" alt="' + img.alt + '">';
+        lb.classList.add('open');
+      });
+    });
+    document.getElementById('lbClose').addEventListener('click', function () { lb.classList.remove('open'); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) lb.classList.remove('open'); });
+  })();
+</script>
+</body>
+</html>
