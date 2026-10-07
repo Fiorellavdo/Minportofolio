@@ -17,7 +17,7 @@
     <div class="nav-links">
       <a href="index.html">Hem</a>
       <a href="showroom.html">Showroom</a>
-      <a href="case-1.html" class="current">Case</a>
+      <a href="case-4.html" class="current">Case</a>
       <a href="profil.html">Grafisk profil</a>
       <a href="kontakt.html">Kontakt</a>
       <button class="theme-btn" id="themeBtn" aria-label="Växla tema">☾</button>
@@ -25,16 +25,16 @@
     <button class="burger" id="burger" aria-label="Meny">☰</button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Hem</a><a href="showroom.html">Showroom</a><a href="case-1.html">Case</a><a href="profil.html">Grafisk profil</a><a href="kontakt.html">Kontakt</a>
+    <a href="index.html">Hem</a><a href="showroom.html">Showroom</a><a href="case-4.html">Case</a><a href="profil.html">Grafisk profil</a><a href="kontakt.html">Kontakt</a>
   </div>
 </nav>
 
 <header class="page-top wrap">
   <div class="filters case-switch reveal">
-    <a class="filter" href="case-1.html">Tre kanaler, en budget</a>
-    <a class="filter" href="case-2.html">B2B-plattform</a>
-    <a class="filter" href="case-3.html">Lokalt tjänsteföretag</a>
     <a class="filter active" href="case-4.html" aria-current="page">A/B-test på Meta</a>
+    <a class="filter" href="case-3.html">Lokalt tjänsteföretag</a>
+    <a class="filter" href="case-2.html">B2B-plattform</a>
+    <a class="filter" href="case-1.html">Skolprojekt: tre kanaler</a>
   </div>
   <div class="eyebrow reveal">Case · Meta Ads</div>
   <h1 class="reveal">Ett A/B-test som visade <em>att måttet var fel.</em></h1>
@@ -93,6 +93,48 @@
   </div>
 
   <p class="case-lead reveal"><b>Slutsats:</b> Lead mätte sidvisningar, inte förfrågningar. Köp triggades bara när formuläret skickades, så det blev mitt mått på en riktig förfrågan.</p>
+</section>
+
+<!-- KONVERTERING I GTM OCH GA4 -->
+<section class="section wrap">
+  <div class="eyebrow reveal">Nästa steg för spårningen</div>
+  <h2 class="reveal">Så hade jag byggt om spårningen.</h2>
+  <p class="case-lead reveal">I det här uppdraget hade jag inte tillgång till kundens Google Tag Manager eller GA4. Därför fick jag använda Köp som mått på en förfrågan. Med tillgång och mer tid hade jag byggt en egen händelse som bara räknas när formuläret faktiskt skickas, och som både Meta och Google kan optimera mot.</p>
+
+  <div class="process">
+    <div class="step reveal">
+      <div class="num">01</div>
+      <h4>Kartlägga</h4>
+      <p>Jag hade gått igenom vilka taggar som redan fanns i GTM och i pixeln, och tagit bort det som gjorde att Lead triggades när kontaktsidan öppnades.</p>
+    </div>
+    <div class="step reveal">
+      <div class="num">02</div>
+      <h4>Trigger och tagg</h4>
+      <p>I GTM hade jag skapat en trigger för skickat formulär, till exempel visning av tacksidan. Den hade skickat händelsen generate_lead till GA4 och Lead till Meta.</p>
+    </div>
+    <div class="step reveal">
+      <div class="num">03</div>
+      <h4>Testa</h4>
+      <p>Jag hade testat i förhandsvisningen i GTM, i DebugView i GA4 och i Metas verktyg för händelsetest, så att händelsen bara skickas en gång och vid rätt tillfälle.</p>
+    </div>
+    <div class="step reveal">
+      <div class="num">04</div>
+      <h4>Optimera mot den</h4>
+      <p>I GA4 hade jag markerat händelsen som nyckelhändelse och importerat den till Google Ads. Sedan hade kampanjerna fått optimera mot den, i stället för mot Köp.</p>
+    </div>
+  </div>
+
+  <div class="table-wrap reveal">
+    <table class="data text">
+      <caption>Spårningen jag hade byggt</caption>
+      <thead><tr><th>Händelse</th><th>Ska triggas när</th><th>Används till</th></tr></thead>
+      <tbody>
+        <tr><td>Besök på kontaktsidan</td><td>kontaktsidan öppnas</td><td>följa intresset, inte optimera mot</td></tr>
+        <tr><td><b>generate_lead / Lead</b></td><td>formuläret har skickats</td><td><b>huvudkonvertering i GA4, Google Ads och Meta</b></td></tr>
+        <tr><td>Köp</td><td>bara vid riktiga köp</td><td>tas bort från formuläret</td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 <!-- TESTDESIGN -->
@@ -215,8 +257,8 @@
     </div>
   </div>
   <div class="cta-row reveal" style="margin-top:36px">
-    <a class="btn btn-primary" href="case-3.html">Se förra caset</a>
-    <a class="btn btn-ghost" href="case-1.html">Till första caset</a>
+    <a class="btn btn-primary" href="case-3.html">Se nästa case</a>
+    <a class="btn btn-ghost" href="showroom.html">Se mitt arbete i Showroom</a>
   </div>
 </section>
 
