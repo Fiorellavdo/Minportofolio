@@ -91,7 +91,8 @@ if (showSections) {
   /* --- Bygg HTML för olika medietyper --- */
 
   function buildVideoHTML(path, eager) {
-    const preload = eager ? 'auto' : 'metadata';
+    // Ladda bara videons första bild – hela filen hämtas när man trycker play
+    const preload = 'metadata';
 
     return `
       <div class="media-video" data-video>
@@ -113,10 +114,12 @@ if (showSections) {
 
   function buildCarouselHTML(images, eager) {
     const slides = images.map(function (path, index) {
+      // Bara första sliden laddas direkt, resten när man bläddrar
+      const first = eager && index === 0;
       if (isVideoFile(path)) {
-        return `<video src="${path}" preload="${eager ? 'auto' : 'metadata'}" playsinline></video>`;
+        return `<video src="${path}" preload="metadata" playsinline></video>`;
       }
-      return `<img src="${path}" alt="Slide ${index + 1}" loading="${eager ? 'eager' : 'lazy'}" decoding="async" fetchpriority="${eager ? 'high' : 'auto'}">`;
+      return `<img src="${path}" alt="Slide ${index + 1}" loading="${first ? 'eager' : 'lazy'}" decoding="async" fetchpriority="${first ? 'high' : 'auto'}">`;
     }).join('');
 
     return `
@@ -183,7 +186,7 @@ if (showSections) {
     }
   }
 
-  function buildCard(item) {
+  function buildCard(item, eager) {
     const card = document.createElement('figure');
 
     const isCarousel = item.images.length > 1;
@@ -207,7 +210,7 @@ if (showSections) {
         <div class="mmeta"><span class="mfmt">${guessFormat(item)}</span>${meta ? `<span>${meta}</span>` : ''}</div>
       </figcaption>`;
 
-    const mediaHTML = `<div class="mock-media">${buildMediaHTML(item, true)}</div>`;
+    const mediaHTML = `<div class="mock-media">${buildMediaHTML(item, eager)}</div>`;
     card.innerHTML = mediaHTML + caption;
     refineFormat(card, item);
 
@@ -247,8 +250,9 @@ if (showSections) {
     const grid = document.createElement('div');
     grid.className = 'show-grid';
 
-    items.forEach(function (item) {
-      grid.appendChild(buildCard(item));
+    // De första korten laddas direkt, resten när de scrollas fram
+    items.forEach(function (item, index) {
+      grid.appendChild(buildCard(item, index < 4));
     });
 
     section.appendChild(head);

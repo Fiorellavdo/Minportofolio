@@ -36,11 +36,11 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Tjänstepaket",
     images: [
-      "Media/Vai/En lösning som passar dig - 1.png",
-      "Media/Vai/En lösning som passar dig - 2.png",
-      "Media/Vai/En lösning som passar dig - 3.png",
-      "Media/Vai/En lösning som passar dig - 4.png",
-      "Media/Vai/En lösning som passar dig - 5.png"
+      "Media/Vai/En lösning som passar dig - 1.jpg",
+      "Media/Vai/En lösning som passar dig - 2.jpg",
+      "Media/Vai/En lösning som passar dig - 3.jpg",
+      "Media/Vai/En lösning som passar dig - 4.jpg",
+      "Media/Vai/En lösning som passar dig - 5.jpg"
     ]
   },
   {
@@ -49,11 +49,11 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Digital tillväxt",
     images: [
-      "Media/Vai/Från lokalt hantverk till lönsam digital tillväxt - 1.png",
-      "Media/Vai/Från lokalt hantverk till lönsam digital tillväxt - 2.png",
-      "Media/Vai/Från lokalt hantverk till lönsam digital tillväxt - 3.png",
-      "Media/Vai/Från lokalt hantverk till lönsam digital tillväxt - 4.png",
-      "Media/Vai/Från lokalt hantverk till lönsam digital tillväxt - 5.png"
+      "Media/Vai/Från lokalt hantverk till lönsam digital tillväxt - 1.jpg",
+      "Media/Vai/Från lokalt hantverk till lönsam digital tillväxt - 2.jpg",
+      "Media/Vai/Från lokalt hantverk till lönsam digital tillväxt - 3.jpg",
+      "Media/Vai/Från lokalt hantverk till lönsam digital tillväxt - 4.jpg",
+      "Media/Vai/Från lokalt hantverk till lönsam digital tillväxt - 5.jpg"
     ]
   },
   {
@@ -62,13 +62,13 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Quiz",
     images: [
-      "Media/Vai/Gör vår quiz - 1.png",
-      "Media/Vai/Gör vår quiz - 2.png",
-      "Media/Vai/Gör vår quiz - 3.png",
-      "Media/Vai/Gör vår quiz - 4.png",
-      "Media/Vai/Gör vår quiz - 5.png",
-      "Media/Vai/Gör vår quiz - 6.png",
-      "Media/Vai/Gör vår quiz - 7.png"
+      "Media/Vai/Gör vår quiz - 1.jpg",
+      "Media/Vai/Gör vår quiz - 2.jpg",
+      "Media/Vai/Gör vår quiz - 3.jpg",
+      "Media/Vai/Gör vår quiz - 4.jpg",
+      "Media/Vai/Gör vår quiz - 5.jpg",
+      "Media/Vai/Gör vår quiz - 6.jpg",
+      "Media/Vai/Gör vår quiz - 7.jpg"
     ]
   },
   {
@@ -77,11 +77,11 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Hur funkar det",
     images: [
-      "Media/Vai/Hur funkar det anlita oss (vai) - 6.png",
-      "Media/Vai/Hur funkar det anlita oss (vai) - 7.png",
-      "Media/Vai/Hur funkar det anlita oss (vai) - 8.png",
-      "Media/Vai/Hur funkar det anlita oss (vai) - 9.png",
-      "Media/Vai/Hur funkar det anlita oss (vai) - 10.png"
+      "Media/Vai/Hur funkar det anlita oss (vai) - 6.jpg",
+      "Media/Vai/Hur funkar det anlita oss (vai) - 7.jpg",
+      "Media/Vai/Hur funkar det anlita oss (vai) - 8.jpg",
+      "Media/Vai/Hur funkar det anlita oss (vai) - 9.jpg",
+      "Media/Vai/Hur funkar det anlita oss (vai) - 10.jpg"
     ]
   },
   {
@@ -90,13 +90,13 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Insikter",
     images: [
-      "Media/Vai/Insikter vanliga misstag - 1.png",
-      "Media/Vai/Insikter vanliga misstag - 2.png",
-      "Media/Vai/Insikter vanliga misstag - 3.png",
-      "Media/Vai/Insikter vanliga misstag - 4.png",
-      "Media/Vai/Insikter vanliga misstag - 5.png",
-      "Media/Vai/Insikter vanliga misstag - 6.png",
-      "Media/Vai/Insikter vanliga misstag - 7.png"
+      "Media/Vai/Insikter vanliga misstag - 1.jpg",
+      "Media/Vai/Insikter vanliga misstag - 2.jpg",
+      "Media/Vai/Insikter vanliga misstag - 3.jpg",
+      "Media/Vai/Insikter vanliga misstag - 4.jpg",
+      "Media/Vai/Insikter vanliga misstag - 5.jpg",
+      "Media/Vai/Insikter vanliga misstag - 6.jpg",
+      "Media/Vai/Insikter vanliga misstag - 7.jpg"
     ]
   },
   {
@@ -105,11 +105,11 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Banners",
     images: [
-      "Media/Vai/Linkedin banner - 1.png",
-      "Media/Vai/Linkedin banner - 2.png",
-      "Media/Vai/Linkedin banner - 3.png",
-      "Media/Vai/Linkedin banner - 4.png",
-      "Media/Vai/Linkedin banner - 5.png"
+      "Media/Vai/Linkedin banner - 1.jpg",
+      "Media/Vai/Linkedin banner - 2.jpg",
+      "Media/Vai/Linkedin banner - 3.jpg",
+      "Media/Vai/Linkedin banner - 4.jpg",
+      "Media/Vai/Linkedin banner - 5.jpg"
     ]
   },
   {
@@ -118,10 +118,10 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Visitkort",
     images: [
-      "Media/Vai/visitkort - 1.png",
-      "Media/Vai/visitkort - 2.png",
-      "Media/Vai/visitkort - 3.png",
-      "Media/Vai/visitkort - 4.png"
+      "Media/Vai/visitkort - 1.jpg",
+      "Media/Vai/visitkort - 2.jpg",
+      "Media/Vai/visitkort - 3.jpg",
+      "Media/Vai/visitkort - 4.jpg"
     ]
   },
   {
@@ -130,9 +130,9 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Team",
     images: [
-      "Media/Vai/Team bilder - 1.png",
-      "Media/Vai/Team bilder - 2.png",
-      "Media/Vai/Team bilder - 3.png"
+      "Media/Vai/Team bilder - 1.jpg",
+      "Media/Vai/Team bilder - 2.jpg",
+      "Media/Vai/Team bilder - 3.jpg"
     ]
   },
   {
@@ -141,7 +141,7 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Team",
     images: [
-      "Media/Vai/Team bilder - 5.png"
+      "Media/Vai/Team bilder - 5.jpg"
     ]
   },
   {
@@ -150,8 +150,8 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Så jobbar vi",
     images: [
-      "Media/Vai/Så jobbar vi - 1.png",
-      "Media/Vai/Så jobbar vi - 2.png"
+      "Media/Vai/Så jobbar vi - 1.jpg",
+      "Media/Vai/Så jobbar vi - 2.jpg"
     ]
   },
   
@@ -227,7 +227,7 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Midsommar",
     images: [
-     "Media/Vai/Midsommar.png"
+     "Media/Vai/Midsommar.jpg"
     ]
   },
 
@@ -237,11 +237,11 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Midsommar",
     images: [
-     "Media/Vai/1.png",
-      "Media/Vai/2.png",
-      "Media/Vai/3.png",
-      "Media/Vai/4.png",
-      "Media/Vai/5.png"
+     "Media/Vai/1.jpg",
+      "Media/Vai/2.jpg",
+      "Media/Vai/3.jpg",
+      "Media/Vai/4.jpg",
+      "Media/Vai/5.jpg"
     ]
   },
 
@@ -268,7 +268,7 @@ window.CAROUSELS = [
     client: "VAI · egna kanaler",
     label: "Kurs i Umeå",
     images: [
-      "Media/Vai/Vi ses umeå.png"
+      "Media/Vai/Vi ses umeå.jpg"
     ]
   },
 
@@ -280,10 +280,10 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Carlssons Mattservice",
     images: [
-      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 1.png",
-      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 2.png",
-      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 3.png",
-      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 4.png"
+      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 1.jpg",
+      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 2.jpg",
+      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 3.jpg",
+      "Media/Vai kunder/(B2B) Första steg Carlssons Mattservice - 4.jpg"
     ]
   },
 
@@ -293,8 +293,8 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Carlssons Mattservice",
     images: [
-      "Media/Vai kunder/Juni - Kampanjen.png",
-      "Media/Vai kunder/2.png"
+      "Media/Vai kunder/Juni - Kampanjen.jpg",
+      "Media/Vai kunder/2.jpg"
     ]
   },
 
@@ -304,10 +304,10 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Carlssons Mattservice · Badrum",
     images: [
-      "Media/Vai kunder/Ditt drömbadrum.png",
-      "Media/Vai kunder/du behöver inte kunna allt om badrum.png",
-      "Media/Vai kunder/Godkänd.png",
-      "Media/Vai kunder/känn dig trygg.png"
+      "Media/Vai kunder/Ditt drömbadrum.jpg",
+      "Media/Vai kunder/du behöver inte kunna allt om badrum.jpg",
+      "Media/Vai kunder/Godkänd.jpg",
+      "Media/Vai kunder/känn dig trygg.jpg"
     ]
   },
 
@@ -317,8 +317,8 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Fönsterputs",
     images: [
-      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 2.png",
-      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 4.png"
+      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 2.jpg",
+      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 4.jpg"
     ]
   },
   {
@@ -327,8 +327,8 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Fönsterputs",
     images: [
-      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 1.png",
-      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 3.png"
+      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 1.jpg",
+      "Media/Vai kunder/Fönsterputs (meta kampanj)  - 3.jpg"
     ]
   },
   {
@@ -337,8 +337,8 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Hotel 1861 · B2B",
     images: [
-      "Media/Vai kunder/Företag (hotel1861) - 1.png",
-      "Media/Vai kunder/Företag (hotel1861) - 2.png"
+      "Media/Vai kunder/Företag (hotel1861) - 1.jpg",
+      "Media/Vai kunder/Företag (hotel1861) - 2.jpg"
     ]
   },
   {
@@ -365,8 +365,8 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Hotel 1861 · RALLY VM",
     images: [
-      "Media/Vai kunder/Hotel 1861 (RALLY VM) (Instagram-inlägg (45)) - 1.png",
-      "Media/Vai kunder/Hotel 1861 (RALLY VM) (Instagram-inlägg (45)) - 2.png"
+      "Media/Vai kunder/Hotel 1861 (RALLY VM) (Instagram-inlägg (45)) - 1.jpg",
+      "Media/Vai kunder/Hotel 1861 (RALLY VM) (Instagram-inlägg (45)) - 2.jpg"
     ]
   },
 
@@ -376,8 +376,8 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Hotel 1861 · Sportlov",
     images: [
-      "Media/Vai kunder/Sportlov (hotel1861) (1080 x 1350 px) - 1.png",
-      "Media/Vai kunder/Sportlov (hotel1861) (1080 x 1350 px) - 2.png"
+      "Media/Vai kunder/Sportlov (hotel1861) (1080 x 1350 px) - 1.jpg",
+      "Media/Vai kunder/Sportlov (hotel1861) (1080 x 1350 px) - 2.jpg"
     ]
   },
 
@@ -387,9 +387,9 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Träbyggarna",
     images: [
-      "Media/Vai kunder/Träbyggarna 1.png",
-      "Media/Vai kunder/Träbyggarna 2.png",
-      "Media/Vai kunder/Träbyggarna 3.png"
+      "Media/Vai kunder/Träbyggarna 1.jpg",
+      "Media/Vai kunder/Träbyggarna 2.jpg",
+      "Media/Vai kunder/Träbyggarna 3.jpg"
     ]
   },
 
@@ -399,8 +399,8 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Träbyggarna",
     images: [
-      "Media/Vai kunder/Höstkmpanj2.png",
-      "Media/Vai kunder/Höstkmpanj.png"
+      "Media/Vai kunder/Höstkmpanj2.jpg",
+      "Media/Vai kunder/Höstkmpanj.jpg"
     ]
   },
 
@@ -410,7 +410,7 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Hotel 1861",
     images: [
-      "Media/Vai kunder/Annons 1 — Akut bostadsnöd.png"
+      "Media/Vai kunder/Annons 1 — Akut bostadsnöd.jpg"
     ]
   },
 
@@ -420,8 +420,8 @@ window.CAROUSELS = [
     client: "VAI · kunder",
     label: "Hotel 1861 · Hyr hela hotellet",
     images: [
-      "Media/Vai kunder/Hyr hela hotell.png",
-      "Media/Vai kunder/lås in er för en kväll.png"
+      "Media/Vai kunder/Hyr hela hotell.jpg",
+      "Media/Vai kunder/lås in er för en kväll.jpg"
     ]
   },
 
@@ -434,7 +434,7 @@ window.CAROUSELS = [
     client: "Evity",
     label: "Evity · LinkedIn",
     images: [
-      "Media/Evity/1.png"
+      "Media/Evity/1.jpg"
     ]
   },
   {
@@ -443,7 +443,7 @@ window.CAROUSELS = [
     client: "Evity",
     label: "Evity · LinkedIn",
     images: [
-      "Media/Evity/2.png"
+      "Media/Evity/2.jpg"
     ]
   },
   {
@@ -452,7 +452,7 @@ window.CAROUSELS = [
     client: "Evity",
     label: "Evity · LinkedIn",
     images: [
-      "Media/Evity/3.png"
+      "Media/Evity/3.jpg"
     ]
   },
   {
@@ -461,7 +461,7 @@ window.CAROUSELS = [
     client: "Evity",
     label: "Evity · LinkedIn",
     images: [
-      "Media/Evity/4.png"
+      "Media/Evity/4.jpg"
     ]
   },
   {
@@ -470,7 +470,7 @@ window.CAROUSELS = [
     client: "Evity",
     label: "Evity · LinkedIn",
     images: [
-      "Media/Evity/5 (1).png"
+      "Media/Evity/5 (1).jpg"
     ]
   },
   {
@@ -479,7 +479,7 @@ window.CAROUSELS = [
     client: "Evity",
     label: "Evity · LinkedIn",
     images: [
-      "Media/Evity/6.png"
+      "Media/Evity/6.jpg"
     ]
   },
   {
@@ -488,7 +488,7 @@ window.CAROUSELS = [
     client: "Evity",
     label: "Evity · LinkedIn",
     images: [
-      "Media/Evity/16.png"
+      "Media/Evity/16.jpg"
     ]
   },
   {
@@ -497,7 +497,7 @@ window.CAROUSELS = [
     client: "Evity",
     label: "Evity · LinkedIn",
     images: [
-      "Media/Evity/17.png"
+      "Media/Evity/17.jpg"
     ]
   },
   {
@@ -506,7 +506,7 @@ window.CAROUSELS = [
     client: "Evity",
     label: "Evity · LinkedIn",
     images: [
-      "Media/Evity/18.png"
+      "Media/Evity/18.jpg"
     ]
   },
 
@@ -517,7 +517,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "20% rabatt",
     images: [
-      "Media/Primus-Silva/disconut-6.png"
+      "Media/Primus-Silva/disconut-6.jpg"
     ]
   },
   {
@@ -526,7 +526,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "20% rabatt",
     images: [
-      "Media/Primus-Silva/disconut-5.png"
+      "Media/Primus-Silva/disconut-5.jpg"
     ]
   },
   {
@@ -535,7 +535,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "20% rabatt",
     images: [
-      "Media/Primus-Silva/disconut-1.png"
+      "Media/Primus-Silva/disconut-1.jpg"
     ]
   },
   {
@@ -544,7 +544,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "20% rabatt",
     images: [
-      "Media/Primus-Silva/disconut-2.png"
+      "Media/Primus-Silva/disconut-2.jpg"
     ]
   },
   {
@@ -553,7 +553,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "20% rabatt",
     images: [
-      "Media/Primus-Silva/disconut-3.png"
+      "Media/Primus-Silva/disconut-3.jpg"
     ]
   },
   {
@@ -562,7 +562,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "20% rabatt",
     images: [
-      "Media/Primus-Silva/disconut-4.png"
+      "Media/Primus-Silva/disconut-4.jpg"
     ]
   },
   {
@@ -571,7 +571,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "40% kommer snart",
     images: [
-      "Media/Primus-Silva/kommer-snart-1.png"
+      "Media/Primus-Silva/kommer-snart-1.jpg"
     ]
   },
   {
@@ -580,7 +580,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "40% kommer snart",
     images: [
-      "Media/Primus-Silva/kommer-snart-2.png"
+      "Media/Primus-Silva/kommer-snart-2.jpg"
     ]
   },
   {
@@ -589,7 +589,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "40% kommer snart",
     images: [
-      "Media/Primus-Silva/kommer-snart-3.png"
+      "Media/Primus-Silva/kommer-snart-3.jpg"
     ]
   },
   {
@@ -598,7 +598,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Primus",
     images: [
-      "Media/Primus-Silva/10.png"
+      "Media/Primus-Silva/10.jpg"
     ]
   },
   {
@@ -607,7 +607,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Primus",
     images: [
-      "Media/Primus-Silva/20.png"
+      "Media/Primus-Silva/20.jpg"
     ]
   },
   {
@@ -616,7 +616,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Primus",
     images: [
-      "Media/Primus-Silva/30.png"
+      "Media/Primus-Silva/30.jpg"
     ]
   },
   {
@@ -625,7 +625,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Primus",
     images: [
-      "Media/Primus-Silva/40.png"
+      "Media/Primus-Silva/40.jpg"
     ]
   },
   {
@@ -634,7 +634,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Primus",
     images: [
-      "Media/Primus-Silva/50.png"
+      "Media/Primus-Silva/50.jpg"
     ]
   },
   {
@@ -643,7 +643,7 @@ window.CAROUSELS = [
     client: "Primus-Silva",
     label: "Primus",
     images: [
-      "Media/Primus-Silva/60.png"
+      "Media/Primus-Silva/60.jpg"
     ]
   },
   {
@@ -690,7 +690,7 @@ window.CAROUSELS = [
     client: "Fritid",
     label: "Ny utbildning",
     images: [
-      "Media/Fritid/Jobba med det som betyder något.png"
+      "Media/Fritid/Jobba med det som betyder något.jpg"
     ]
   },
   {
@@ -699,7 +699,7 @@ window.CAROUSELS = [
     client: "Fritid",
     label: "Ny utbildning",
     images: [
-      "Media/Fritid/Lägg till lite brödtext.png"
+      "Media/Fritid/Lägg till lite brödtext.jpg"
     ]
   },
   {
@@ -708,7 +708,7 @@ window.CAROUSELS = [
     client: "Fritid",
     label: "Ny utbildning",
     images: [
-      "Media/Fritid/Säkraettframtid.png"
+      "Media/Fritid/Säkraettframtid.jpg"
     ]
   },
   {
@@ -717,7 +717,7 @@ window.CAROUSELS = [
     client: "Fritid",
     label: "Wilmas Cookies",
     images: [
-      "Media/Fritid/Wilmas Cookies.png"
+      "Media/Fritid/Wilmas Cookies.jpg"
     ]
   },
   {
@@ -735,9 +735,9 @@ window.CAROUSELS = [
     client: "Fritid",
     label: "Fritid",
     images: [
-      "Media/Fritid/format.png",
+      "Media/Fritid/format.jpg",
       "Media/Fritid/exempel.png",
-      "Media/Fritid/exempel 2.png"
+      "Media/Fritid/exempel 2.jpg"
     ]
   },
 
@@ -775,7 +775,7 @@ window.CAROUSELS = [
     client: "Utbildning",
     label: "Björkstadens djurklinik",
     images: [
-      "Media/Utbilning/Björkstadens djurklinik.png"
+      "Media/Utbilning/Björkstadens djurklinik.jpg"
     ]
   },
   {
@@ -811,7 +811,7 @@ window.CAROUSELS = [
     client: "Utbildning",
     label: "Mood Board",
     images: [
-      "Media/Utbilning/Mood-board.png"
+      "Media/Utbilning/Mood-board.jpg"
     ]
   },
   {
@@ -820,11 +820,11 @@ window.CAROUSELS = [
     client: "Utbildning",
     label: "LinkedIn",
     images: [
-      "Media/Utbilning/1.png",
-      "Media/Utbilning/2.png",
-      "Media/Utbilning/3.png",
-      "Media/Utbilning/4.png",
-      "Media/Utbilning/5.png"
+      "Media/Utbilning/1.jpg",
+      "Media/Utbilning/2.jpg",
+      "Media/Utbilning/3.jpg",
+      "Media/Utbilning/4.jpg",
+      "Media/Utbilning/5.jpg"
     ]
   },
   {
@@ -833,8 +833,8 @@ window.CAROUSELS = [
     client: "Utbildning",
     label: "Meta",
     images: [
-      "Media/Utbilning/4x5 boka hos oss.png",
-      "Media/Utbilning/4x5 skapa minnen.png"
+      "Media/Utbilning/4x5 boka hos oss.jpg",
+      "Media/Utbilning/4x5 skapa minnen.jpg"
     ]
   },
   {
@@ -843,7 +843,7 @@ window.CAROUSELS = [
     client: "Utbildning",
     label: "LinkedIn · Recension",
     images: [
-      "Media/Utbilning/Linkedin recension.png"
+      "Media/Utbilning/Linkedin recension.jpg"
     ]
   },
   {
@@ -852,8 +852,8 @@ window.CAROUSELS = [
     client: "Utbildning",
     label: "Meta",
     images: [
-      "Media/Utbilning/9x16 boka hos oss.png",
-      "Media/Utbilning/9x16 skapa minnen.png",
+      "Media/Utbilning/9x16 boka hos oss.jpg",
+      "Media/Utbilning/9x16 skapa minnen.jpg",
       "Media/Utbilning/Favoritbild - byte av font och copy.jpg"
     ]
   }
