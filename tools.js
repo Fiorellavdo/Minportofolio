@@ -25,6 +25,22 @@ window.TOOLS = [
     ]
   },
   {
+    group: "Frontend, utveckling & AI",
+    items: [
+      { name: "HTML/CSS", icon: "html5" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "React", icon: "react" },
+      { name: "React Native", icon: "react" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "Node.js", icon: "nodedotjs" },
+      { name: "MongoDB", icon: "mongodb" },
+      { name: "GitHub", icon: "github" },
+      { name: "ChatGPT", icon: "openai" },
+      { name: "Claude", icon: "claude" },
+      { name: "Jasper", icon: null }
+    ]
+  },
+  {
     group: "Marknadsföring & analys",
     items: [
       { name: "SEO", icon: null },
@@ -65,21 +81,6 @@ window.TOOLS = [
       { name: "Microsoft 365", icon: null },
       { name: "Dropbox", icon: "dropbox" }
     ]
-  },
-  {
-    group: "AI & utveckling",
-    items: [
-      { name: "ChatGPT", icon: "openai" },
-      { name: "Claude", icon: "claude" },
-      { name: "Jasper", icon: null },
-      { name: "HTML/CSS", icon: "html5" },
-      { name: "JavaScript", icon: "javascript" },
-      { name: "React", icon: "react" },
-      { name: "React Native", icon: "react" },
-      { name: "TypeScript", icon: "typescript" },
-      { name: "Node.js", icon: "nodedotjs" },
-      { name: "MongoDB", icon: "mongodb" },
-      { name: "GitHub", icon: "github" }
-    ]
   }
+
 ];

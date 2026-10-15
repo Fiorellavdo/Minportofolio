@@ -145,6 +145,44 @@ if (showSections) {
 
   /* --- Skapa ett kort (figure) för ett innehållsobjekt --- */
 
+  const PLATFORM_NAMES = { meta: 'Meta', linkedin: 'LinkedIn' };
+
+  // Gissa format utifrån antal filer; förfinas när första bilden/videon laddats
+  function guessFormat(item) {
+    if (item.images.length > 1) {
+      return 'Karusell';
+    }
+    return isVideoFile(item.images[0]) ? 'Video' : 'Inlägg';
+  }
+
+  // Stående 9:16 blir Story/Reel när vi vet bildens mått
+  function refineFormat(card, item) {
+    const formatTag = card.querySelector('.mfmt');
+    const media = card.querySelector('.mock-media img, .mock-media video');
+    if (!formatTag || !media) {
+      return;
+    }
+
+    function check(width, height) {
+      if (!width || height / width < 1.6) {
+        return;
+      }
+      if (isVideoFile(item.images[0]) && item.images.length === 1) {
+        formatTag.textContent = 'Reel';
+      } else {
+        formatTag.textContent = item.images.length > 1 ? 'Stories' : 'Story';
+      }
+    }
+
+    if (media.tagName === 'VIDEO') {
+      media.addEventListener('loadedmetadata', function () { check(media.videoWidth, media.videoHeight); });
+    } else if (media.complete) {
+      check(media.naturalWidth, media.naturalHeight);
+    } else {
+      media.addEventListener('load', function () { check(media.naturalWidth, media.naturalHeight); });
+    }
+  }
+
   function buildCard(item) {
     const card = document.createElement('figure');
 
@@ -160,14 +198,18 @@ if (showSections) {
     }
 
     card.className = classNames.join(' ');
-    card.style.margin = '0';
+
+    const meta = PLATFORM_NAMES[(item.platform || '').toLowerCase()];
 
     const caption = `
-      <div class="mclient">${item.client}</div>
-      <div class="mlabel">${item.label}</div>`;
+      <figcaption class="mcap">
+        <div class="mlabel">${item.label}</div>
+        <div class="mmeta"><span class="mfmt">${guessFormat(item)}</span>${meta ? `<span>${meta}</span>` : ''}</div>
+      </figcaption>`;
 
     const mediaHTML = `<div class="mock-media">${buildMediaHTML(item, true)}</div>`;
     card.innerHTML = mediaHTML + caption;
+    refineFormat(card, item);
 
     card.addEventListener('click', function (event) {
       const clickedControl =
@@ -199,7 +241,8 @@ if (showSections) {
     head.className = 'cat-head reveal';
     head.innerHTML = `
       <h2 class="cat-title">${category.label}</h2>
-      <span class="cat-count">${items.length} st</span>`;
+      <span class="cat-count">${items.length} st</span>
+      ${category.desc ? `<p class="cat-desc">${category.desc}</p>` : ''}`;
 
     const grid = document.createElement('div');
     grid.className = 'show-grid';

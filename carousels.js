@@ -5,12 +5,12 @@
    etikett varje kategori får. Nyckeln måste matcha "src" nedan.
    ===================================================================== */
 window.CATEGORIES = [
-  { key: "vai", label: "VAI · kunder" },
-  { key: "vaiegna", label: "VAI · egna kanaler" },
-  { key: "evity", label: "Evity" },
-  { key: "silva", label: "Primus-Silva" },
-  { key: "utbildning", label: "Utbildning" },
-  { key: "fritid", label: "Fritid" }
+  { key: "vai", label: "VAI · kunder", desc: "Annonser och inlägg jag har tagit fram för byråns kunder, från idé och text till färdig design." },
+  { key: "vaiegna", label: "VAI · egna kanaler", desc: "Innehåll för byråns egna kanaler, främst LinkedIn: karuseller, video och grafik." },
+  { key: "evity", label: "Evity", desc: "LinkedIn-inlägg för ett B2B-företag, som en del av marknadsarbetet jag byggde upp." },
+  { key: "silva", label: "Primus-Silva", desc: "Kampanjbilder och video för e-handel under min praktik." },
+  { key: "utbildning", label: "Utbildning", desc: "Projekt från mina utbildningar inom marknadsföring och innehållsproduktion." },
+  { key: "fritid", label: "Fritid", desc: "Egna projekt utanför jobb och skola." }
 ];
 
 /* =====================================================================
@@ -245,6 +245,33 @@ window.CAROUSELS = [
     ]
   },
 
+  {
+    src: "vaiegna",
+    platform: "linkedin",
+    client: "VAI · egna kanaler",
+    label: "AI i svenskarnas vardag",
+    images: [
+      "Media/Vai/1.karusell internet.png",
+      "Media/Vai/2.karusell internet.png",
+      "Media/Vai/3.karusell internet.png",
+      "Media/Vai/4.karusell internet.png",
+      "Media/Vai/5.karusell internet.png",
+      "Media/Vai/6.karusell internet.png",
+      "Media/Vai/7.karusell internet.png",
+      "Media/Vai/8.karusell internet.png"
+    ]
+  },
+
+  {
+    src: "vaiegna",
+    platform: "linkedin",
+    client: "VAI · egna kanaler",
+    label: "Kurs i Umeå",
+    images: [
+      "Media/Vai/Vi ses umeå.png"
+    ]
+  },
+
 
   // ===== VAI – KUNDER =====
   {
@@ -267,8 +294,20 @@ window.CAROUSELS = [
     label: "Carlssons Mattservice",
     images: [
       "Media/Vai kunder/Juni - Kampanjen.png",
-      "Media/Vai kunder/2.png",
-      "Media/Vai kunder/3.png"
+      "Media/Vai kunder/2.png"
+    ]
+  },
+
+  {
+    src: "vai",
+    platform: "meta",
+    client: "VAI · kunder",
+    label: "Carlssons Mattservice · Badrum",
+    images: [
+      "Media/Vai kunder/Ditt drömbadrum.png",
+      "Media/Vai kunder/du behöver inte kunna allt om badrum.png",
+      "Media/Vai kunder/Godkänd.png",
+      "Media/Vai kunder/känn dig trygg.png"
     ]
   },
 
@@ -372,6 +411,17 @@ window.CAROUSELS = [
     label: "Hotel 1861",
     images: [
       "Media/Vai kunder/Annons 1 — Akut bostadsnöd.png"
+    ]
+  },
+
+  {
+    src: "vai",
+    platform: "meta",
+    client: "VAI · kunder",
+    label: "Hotel 1861 · Hyr hela hotellet",
+    images: [
+      "Media/Vai kunder/Hyr hela hotell.png",
+      "Media/Vai kunder/lås in er för en kväll.png"
     ]
   },
 
@@ -677,28 +727,6 @@ window.CAROUSELS = [
     label: "En plats där unga hittar hem",
     images: [
       "Media/Fritid/En plats där unga människor hittar hem.mp4"
-    ]
-  },
-  {
-    src: "fritid",
-    platform: "meta",
-    client: "Fritid",
-    label: "IKEA POPUP",
-    images: [
-      "Media/Fritid/KOrv med bröd.png"
-    ]
-  },
-
-   {
-    src: "fritid",
-    client: "Fritid",
-    label: "Arbetsprov",
-    images: [
-      "Media/Fritid/1.png",
-      "Media/Fritid/2.png",
-      "Media/Fritid/3.png",
-      "Media/Fritid/4.png",
-      "Media/Fritid/5.png"
     ]
   },
 
