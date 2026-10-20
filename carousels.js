@@ -720,15 +720,6 @@ window.CAROUSELS = [
       "Media/Fritid/Wilmas Cookies.jpg"
     ]
   },
-  {
-    src: "fritid",
-    platform: "meta",
-    client: "Fritid",
-    label: "En plats där unga hittar hem",
-    images: [
-      "Media/Fritid/En plats där unga människor hittar hem.mp4"
-    ]
-  },
 
   {
     src: "fritid",
