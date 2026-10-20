@@ -53,6 +53,57 @@ window.PROFILES = [
       { name: "Inter Regular", role: "Brödtext", sample: "Inter Regular AaBbCcDd", css:"'Inter',sans-serif" },
       { name: "Inter Medium", role: "Knappar · Boka demo", sample: "Boka demo →", css:"'Inter',sans-serif", weight:500 }
     ]
+  },
+
+  {
+    name: "Umeå Stadsmission",
+    tagline: "Ideell förening som verkar för alla människors rätt till bostad, sysselsättning och social trygghet. Uppdraget: utveckla tonaliteten i deras sociala kanaler.",
+    logo: { type: "img", src: "Media/US/us-logo.png" },
+    bg: "#F6F5F0",
+    tone: {
+      intro: "Vi tog fram detta som ett exempel på hur Umeå Stadsmission hade kunnat arbeta med sin tonalitet. Utöver den nuvarande tonaliteten som Umeå Stadsmission har ville vi att de skulle förmedla mer glädje, hopp och en positiv känsla i sina kanaler.",
+      lead: "Det kunde de göra genom att:",
+      points: [
+        "Arbeta mer med färgglada och grafiskt intressanta bilder.",
+        "Använda bilder med människor i fokus.",
+        "Använda bilder i större format och bildspel vid inlägg med mycket information.",
+        "Blanda videos, bilder och storys."
+      ]
+    },
+    palettes: [
+      {
+        title: "Färgpalett · viktig information",
+        text: "Denna färgpalett har en tydlig koppling till US tonalitet. Färgerna används för att belysa viktig information, till exempel akutbehov och fattigdomsrapporten.",
+        colors: [
+          { hex: "#E31E24", name: "Röd" },
+          { hex: "#E85A3C", name: "Tomat" },
+          { hex: "#F0862F", name: "Orange" },
+          { hex: "#3D3D3D", name: "Grafit" },
+          { hex: "#1A1A1A", name: "Svart" }
+        ]
+      },
+      {
+        title: "Färgpalett · glädje",
+        text: "En ljusare färgpalett används vid mer lättsamma och glada inlägg. Gul är den primära kulören som starkt kopplas till glädje.",
+        colors: [
+          { hex: "#FFC93C", name: "Gul · primär" },
+          { hex: "#FFBA55", name: "Solgul" },
+          { hex: "#FFC468", name: "Ljus aprikos" },
+          { hex: "#FFA86B", name: "Persika" },
+          { hex: "#FF8F5E", name: "Korall" }
+        ]
+      }
+    ],
+    fonts: [
+      { name: "Montserrat Black", role: "Rubriker", sample: "TONALITET", css:"'Montserrat',sans-serif", weight:900 },
+      { name: "Montserrat Light", role: "Brödtext", sample: "Glädje, hopp och en positiv känsla", css:"'Montserrat',sans-serif", weight:300 }
+    ],
+    image: {
+      title: "Före & efter",
+      src: "Media/Utbilning/Marknadsplan - US.jpg",
+      alt: "Umeå Stadsmissions Instagramflöde före och efter den nya tonaliteten",
+      caption: "Instagramflödet idag jämfört med förslaget: färgglada, grafiska inlägg med människor i fokus, där paletterna skiljer viktig information från glada inlägg."
+    }
   }
 
 ];

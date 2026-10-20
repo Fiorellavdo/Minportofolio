@@ -746,15 +746,6 @@ window.CAROUSELS = [
     src: "utbildning",
     platform: "meta",
     client: "Utbildning",
-    label: "Instagram · Marknadsplan",
-    images: [
-      "Media/Utbilning/Marknadsplan - US.jpg"
-    ]
-  },
-  {
-    src: "utbildning",
-    platform: "meta",
-    client: "Utbildning",
     label: "Målgrupp & koncept",
     images: [
       "Media/Utbilning/Målgrupp, Utveckla tonalitetbranding Content Calendar Content - bild Content - rörligt Copy Koncept för e-mail marketing.mp4"

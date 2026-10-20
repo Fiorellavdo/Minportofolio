@@ -1245,6 +1245,37 @@ textarea {
   font-size:3.4rem;
   letter-spacing:.12em;
 }
+/* extra cards: tonalitet, beskrivningar, bild */
+.pf-wide {
+  grid-column:1 / -1;
+}
+.pf-text {
+  color:var(--muted);
+  line-height:1.6;
+}
+.pf-swatches + .pf-text {
+  margin-top:22px;
+}
+.pf-text + .pf-text {
+  margin-top:14px;
+}
+.pf-list {
+  margin:10px 0 0 1.2em;
+  color:var(--muted);
+  line-height:1.7;
+}
+.pf-figure {
+  margin:0;
+}
+.pf-figure img {
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:calc(var(--radius) / 2);
+}
+.pf-figure figcaption {
+  margin-top:16px;
+}
 /* colors */
 .pf-swatches {
   display:flex;

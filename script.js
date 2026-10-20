@@ -530,15 +530,16 @@ if (profileTabs && window.PROFILES) {
       inner = `<img src="${profile.logo.src}" alt="${profile.name} logotyp">`;
     } else {
       const color = profile.logo.color || '#fff';
-      inner = `<span class="txt" style="color:${color}">${profile.logo.text}</span>`;
+      const extra = profile.logo.css ? ';' + profile.logo.css : '';
+      inner = `<span class="txt" style="color:${color}${extra}">${profile.logo.text}</span>`;
     }
 
     const background = profile.bg || '#222';
     return `<div class="pf-logo" style="background:${background}">${inner}</div>`;
   }
 
-  function buildColorsHTML(profile) {
-    const swatches = profile.colors.map(function (color) {
+  function buildSwatchesHTML(colors) {
+    return colors.map(function (color) {
       return `
         <div class="pf-sw">
           <div class="chip" style="background:${color.hex}"></div>
@@ -546,12 +547,56 @@ if (profileTabs && window.PROFILES) {
           <div class="nm">${color.name || ''}</div>
         </div>`;
     }).join('');
+  }
+
+  function buildColorsHTML(profile) {
+    // Flera paletter med egen beskrivning, t.ex. Umeå Stadsmission
+    if (profile.palettes) {
+      return profile.palettes.map(function (palette) {
+        return `
+          <div class="pf-card">
+            <div class="lbl">${palette.title}</div>
+            <div class="pf-swatches">${buildSwatchesHTML(palette.colors)}</div>
+            ${palette.text ? `<p class="pf-text">${palette.text}</p>` : ''}
+          </div>`;
+      }).join('');
+    }
 
     return `
       <div class="pf-card">
         <div class="lbl">Färgpalett</div>
-        <div class="pf-swatches">${swatches}</div>
+        <div class="pf-swatches">${buildSwatchesHTML(profile.colors)}</div>
       </div>`;
+  }
+
+  function buildToneHTML(profile) {
+    if (!profile.tone) {
+      return '';
+    }
+
+    const points = (profile.tone.points || []).map(function (point) {
+      return `<li>${point}</li>`;
+    }).join('');
+
+    return `
+      <div class="pf-card pf-wide">
+        <div class="lbl">Tonalitet</div>
+        <p class="pf-text">${profile.tone.intro}</p>
+        ${points ? `<p class="pf-text">${profile.tone.lead || ''}</p><ul class="pf-list">${points}</ul>` : ''}
+      </div>`;
+  }
+
+  function buildImageHTML(profile) {
+    if (!profile.image) {
+      return '';
+    }
+
+    return `
+      <figure class="pf-card pf-wide pf-figure">
+        <div class="lbl">${profile.image.title || 'Exempel'}</div>
+        <img src="${profile.image.src}" alt="${profile.image.alt || ''}" loading="lazy">
+        ${profile.image.caption ? `<figcaption class="pf-text">${profile.image.caption}</figcaption>` : ''}
+      </figure>`;
   }
 
   function buildFontsHTML(profile) {
@@ -577,8 +622,11 @@ if (profileTabs && window.PROFILES) {
         </div>`;
     }).join('');
 
+    // Med två paletter hamnar typografin ensam på raden, så den får full bredd
+    const wide = profile.palettes ? ' pf-wide' : '';
+
     return `
-      <div class="pf-card">
+      <div class="pf-card${wide}">
         <div class="lbl">Typografi</div>
         ${fonts}
       </div>`;
@@ -618,8 +666,10 @@ if (profileTabs && window.PROFILES) {
       </div>
       <div class="pf-grid">
         ${buildLogoHTML(profile)}
+        ${buildToneHTML(profile)}
         ${buildColorsHTML(profile)}
         ${buildFontsHTML(profile)}
+        ${buildImageHTML(profile)}
       </div>`;
 
     return panel;
